@@ -1,0 +1,6 @@
+Completed:-
+Login, Database Connection, Logout, Login Page, SignUp
+
+
+Pending:-
+DOB Required Removal

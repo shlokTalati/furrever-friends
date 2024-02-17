@@ -53,24 +53,24 @@ function toggleLogin() {
         
     }
     
-    function loggedInStatus(loginStatus){
+    // function loggedInStatus(loginStatus){
         
-        if(loginStatus == true){
-            loginBtnNav.classList.add("d-none");
-            signupBtnNav.classList.add("d-none");
-            logoutBtnNav.classList.remove("d-none");
-            userBtnNav.classList.remove("d-none");
-            console.log("Login Status is TRUE");
+    //     if(loginStatus == true){
+    //         loginBtnNav.classList.add("d-none");
+    //         signupBtnNav.classList.add("d-none");
+    //         logoutBtnNav.classList.remove("d-none");
+    //         userBtnNav.classList.remove("d-none");
+    //         console.log("Login Status is TRUE");
             
-        }
-        else{
-            loginBtnNav.classList.remove("d-none");
-            signupBtnNav.classList.remove("d-none");
-            logoutBtnNav.classList.add("d-none");        
-            userBtnNav.classList.add("d-none");        
-            console.log("Login Status is FALSE");
-        }
-    }
+    //     }
+    //     else{
+    //         loginBtnNav.classList.remove("d-none");
+    //         signupBtnNav.classList.remove("d-none");
+    //         logoutBtnNav.classList.add("d-none");        
+    //         userBtnNav.classList.add("d-none");        
+    //         console.log("Login Status is FALSE");
+    //     }
+    // }
 
     function updateNote(noteid){
         const myModal = new bootstrap.Modal('#updateModal');

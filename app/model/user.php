@@ -14,8 +14,15 @@ function login($email, $password, $conn){
     } 
 
 function signup($name, $email, $password, $phone, $dob, $city, $conn){
-    $sql = "INSERT INTO user (, `created_on`) VALUES (, current_timestamp())";
-    $sql = "INSERT INTO users (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
+    $sql = "INSERT INTO user (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
+    $result = mysqli_query($conn, $sql);
+
+    if($result){
+        return true;
+    }
+    else{
+        return false;
+    }
 }
 
 

@@ -3,16 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>FurEver Friends</title>
 
     <?php require('app/resources/css/styles.bundle.php') ?>
 
 </head>
-<body class="bg-dark">
+<body class="bg-LIGHT">
     
 <!-- Header -->
-<?php require('app/resources/component/header.php'); ?>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/notes.io/">
+      <h4>FurEver Friends</h4>
+    </a>
 
+    <div class="d-flex">
+      <button class="btn btn-outline-light mx-2 active d-none" onclick="toggleLogin()" id="loginBtnNav">Login</button>
+      <button class="btn btn-outline-light mx-2 d-none" onclick="toggleSignup()" id="signupBtnNav">Sign Up</button>
+
+      <a class="btn btn-outline-secondary mx-2 d-none" href="/notes.io/user/edit" id="userBtnNav">
+          <i class="fa-regular fa-user" style="color: #ffffff;"></i>
+      </a>
+      <a class="btn btn-outline-danger mx-2 d-none" href="/notes.io/logout" id="logoutBtnNav">Logout</a>
+      
+      </div>
+  </div>
+</nav>
 
 <!-- Basically, this main tag renders the entire Main Views of different pages based on the request URI. -->
 
@@ -51,7 +67,7 @@
     <div class="container px-5">
       <h1 class="text-light">Sign Up</h1>
       <br><br>
-      <form action="/notes.io/auth" method="post">
+      <form action="/petmarket/auth" method="post">
 
         <div class="form-floating mb-4">
           <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required>
@@ -64,27 +80,28 @@
             required>
           <label for="signupEmail">Email address</label>
         </div>
+
         <div class="form-floating mb-4">
-          <input type="number" maxlength="10" class="form-control" id="signupContactNo" placeholder="Contact Number"
-            name="signupContactNo" required>
-          <label for="signupContactNo">Contact Number</label>
+          <input type="number" maxlength="10" class="form-control" id="signupPhone" placeholder="Contact Number"
+            name="signupPhone" required>
+          <label for="signupPhone">Contact Number</label>
         </div>
 
         
         <div class="form-floating mb-4">
-          <input type="password" class="form-control" id="signupPass" placeholder="Password" name="signupPass" required>
-          <label for="signupPass">Password</label>
+          <input type="password" class="form-control" id="signupPassword" placeholder="Password" name="signupPassword" required>
+          <label for="signupPassword">Password</label>
         </div>
 
         <div class="form-floating mb-4">
-          <input type="date" class="form-control" id="signupDob" placeholder="Date of Birth" name="signupDob">
-          <label for="signupDate">Date of Birth</label>
+          <input type="date" class="form-control" id="signupDob" placeholder="Date of Birth" name="signupDob" required>
+          <label for="signupDob">Date of Birth</label>
         </div>
 
 
         <div class="form-floating">
-          <input type="text" class="form-control" id="signupCity" placeholder="City" name="signupPass" required>
-          <label for="signupPass">City</label>
+          <input type="text" class="form-control" id="signupCity" placeholder="City" name="signupCity" required>
+          <label for="signupCity">City</label>
         </div>
         <br><br>
         <input type="submit" class="btn btn-outline-light" value="Sign Up">
@@ -95,12 +112,6 @@
   </div>
 
 </main>
-
-
-
-
-
-
 
 
 <!-- Footer -->

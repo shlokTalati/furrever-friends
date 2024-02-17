@@ -3,7 +3,7 @@
   <section class="d-flex justify-content-center justify-content-lg-between p-3 border-bottom">
     <!-- Left -->
     <div class="me-5 d-none d-lg-block">
-      <span>Created With <i class="fa-solid fa-heart"></i>, By Shlok Talati</span>
+      <span>Created With <i class="fa-solid fa-heart"></i>, By Jay Panchal</span>
     </div>
     <!-- Left -->
 
