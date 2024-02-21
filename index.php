@@ -1,10 +1,7 @@
-<?php session_start() ?>
-<?php 
-require('helper.php');
-?>
+<?php require('init.php'); ?>
+<?php require(ROOT. 'helper.php') ?>
+
 
 <?php
-require('app/route/web.php');
+require(ROOT . 'app/route/web.php');
 ?>
-
-

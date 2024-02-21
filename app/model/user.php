@@ -1,29 +1,44 @@
 <?php 
+require(ROOT ."app/config/Database.php");
+class User extends Database
+{
 
-function login($email, $password, $conn){
+
+    function login($email, $password)
+    {
         $sql = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($this->connection, $sql);
 
         if (mysqli_num_rows($result) > 0) {
             $user = mysqli_fetch_assoc($result);
             return $user;
-        }
-        else{
+        } else {
             return null;
         }
-    } 
-
-function signup($name, $email, $password, $phone, $dob, $city, $conn){
-    $sql = "INSERT INTO user (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
-    $result = mysqli_query($conn, $sql);
-
-    if($result){
-        return true;
     }
-    else{
-        return false;
+
+    function signup($name, $email, $password, $phone, $dob, $city)
+    {
+        $sql = "INSERT INTO user (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
+        $result = mysqli_query($this->connection, $sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function updateUser($name, $email, $password, $phone, $dob, $city)
+    {
+        $sql = "UPDATE user SET name = '$name', password = '$password' , phone = '$phone', dob = '$dob', city = '$city' WHERE email = $email";
+        $result = mysqli_query($this->connection, $sql);
+
+        if ($result) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
-
-
-?>

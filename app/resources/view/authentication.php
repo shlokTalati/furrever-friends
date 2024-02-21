@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FurEver Friends</title>
 
-    <?php require('app/resources/css/styles.bundle.php') ?>
+    <?php require(ROOT .'app/resources/css/styles.bundle.php') ?>
 
 </head>
 <body class="bg-LIGHT">
@@ -115,9 +115,9 @@
 
 
 <!-- Footer -->
-<?php require('app/resources/component/footer.php') ?>
+<?php require(ROOT .'app/resources/component/footer.php') ?>
 
-<?php require('app/resources/js/scripts.bundle.php') ?>
+<?php require(ROOT .'app/resources/js/scripts.bundle.php') ?>
 
 
 <?php 

@@ -1,14 +1,16 @@
 <?php 
 
-    $host = "localhost";
-    
-    $username="root";
-    
-    $password="";
-    
-    $database="petmarket";
+    class Database{
 
-    $connection =  mysqli_connect( $host,  $username,  $password,  $database);
+    private $host = "localhost";
+    private $username="root";
+    private $password="";
+    private $database="petmarket";
+    protected $connection;
 
+    function __construct(){
+        $this->connection =  mysqli_connect( $this->host,  $this->username,  $this->password,  $this->database);
+    }
 
+    }
 ?>

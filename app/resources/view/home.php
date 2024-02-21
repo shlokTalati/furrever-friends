@@ -1,50 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 
-    <?php require('app/resources/css/styles.bundle.php') ?>
-
-</head>
-<body class="bg-light">
-    
-<!-- Header -->
-<?php require('app/resources/component/header.php'); ?>
-
-
-<!-- Basically, this main tag renders the entire Main Views of different pages based on the request URI. -->
-
-<main class="container">
- 
- <h1> This is Home Page </h1>
-
-</main>
-
-
-
-
-
-
-
-
-<!-- Footer -->
-<?php require('app/resources/component/footer.php') ?>
-
-<?php require('app/resources/js/scripts.bundle.php') ?>
-
-
-<?php 
-  
-  if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-
-    echo "<script> loggedInStatus(true); </script>";
-}
-else{
-    echo "<script> loggedInStatus(false); </script>";
-}
-
-?>
-</body>
-</html>
+    <div class="container-fluid mt-5">
+        <div class="row">
+            <aside class="col-md-3">
+                <ul class="list-group">
+                    <li class="list-group-item active"><h2>Category</h2></li>
+                    <li class="list-group-item"><a href="#">Dogs</a></li>
+                    <li class="list-group-item"><a href="#">Cats</a></li>
+                    <li class="list-group-item"><a href="#">Fishes</a></li>
+                    <li class="list-group-item"><a href="#">Reptails</a></li>
+                </ul>
+            </aside>
+            <div class="content col-md-9">
+                <h2>Pets For Adoption</h2>
+            </div>
+        </div>
+    </div>
