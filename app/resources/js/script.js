@@ -1,3 +1,45 @@
+let login = document.querySelector(".login-form");
+
+document.querySelector("#login-btn").onclick = () =>{
+    login.classList.toggle('active');
+    navbar.classList.remove('active');
+}
+
+let navbar = document.querySelector(".header .navbar");
+
+document.querySelector('#menu-btn').onclick = () =>{
+    login.classList.remove('active');
+    navbar.classList.toggle('active');
+}
+
+window.onscroll = () =>{
+    login.classList.remove('active');
+    navbar.classList.remove('active');
+}
+
+var swiper = new Swiper(".gallery-slider", {
+    grabCursor:true,
+    loop:true,
+    centeredSlides:true,
+    spaceBetween:20,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+        0:{
+            slidesPerView:1,
+        },
+        700:{
+            slidesPerView:2,
+        },
+    }
+})
+
+
+
+// Old Javascript
+
 
 var loginContainer = document.getElementById("loginContainer");
 var signupContainer = document.getElementById("signupContainer");
@@ -34,7 +76,7 @@ function toggleLogin() {
     }
     
     function toggleSignup() {
-        
+
         //Switches between Login Form and Signup Form
         loginContainer.classList.add("d-none");
         signupContainer.classList.remove("d-none");
@@ -52,25 +94,6 @@ function toggleLogin() {
         
         
     }
-    
-    // function loggedInStatus(loginStatus){
-        
-    //     if(loginStatus == true){
-    //         loginBtnNav.classList.add("d-none");
-    //         signupBtnNav.classList.add("d-none");
-    //         logoutBtnNav.classList.remove("d-none");
-    //         userBtnNav.classList.remove("d-none");
-    //         console.log("Login Status is TRUE");
-            
-    //     }
-    //     else{
-    //         loginBtnNav.classList.remove("d-none");
-    //         signupBtnNav.classList.remove("d-none");
-    //         logoutBtnNav.classList.add("d-none");        
-    //         userBtnNav.classList.add("d-none");        
-    //         console.log("Login Status is FALSE");
-    //     }
-    // }
 
     function updateNote(noteid){
         const myModal = new bootstrap.Modal('#updateModal');

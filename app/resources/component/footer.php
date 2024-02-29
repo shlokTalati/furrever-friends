@@ -1,26 +1,15 @@
-<footer class="text-center text-lg-start bg-secondary text-white mt-auto">
-  <!-- Section: Social media -->
-  <section class="d-flex justify-content-center justify-content-lg-between p-3 border-bottom">
-    <!-- Left -->
-    <div class="me-5 d-none d-lg-block">
-      <span>Created With <i class="fa-solid fa-heart"></i>, By Jay Panchal</span>
-    </div>
-    <!-- Left -->
+<footer class="footer">
 
-    <!-- Right -->
-    <div>
-    
-      <a href="#" class="me-4 text-reset text-decoration-none" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-      <a href="https://www.linkedin.com/in/shlok-talati-124008218/" class="me-4 text-reset text-decoration-none" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-      <a href="https://github.com/shlokTalati" class="me-4 text-reset text-decoration-none"target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
+<div class="box-container">
+
+    <div class="box">
+        <h3><i class="fas fa-paw"></i> FurrEver friEnd </h3>
+        <p> Don't Buy, Adopt </p>
+        <h6> ...Now Choose And Adopt Your Best Buddy... </h6>
     </div>
-    <!-- Right -->
-  </section>
-  <!-- Section: Social media -->
+
+</div>
+
+<div class="credit">&copy; All rights reserved by Jay Panchal & Team. </div>
+
 </footer>

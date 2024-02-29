@@ -5,30 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FurEver Friends</title>
 
-    <?php require(ROOT .'app/resources/css/styles.bundle.php') ?>
-
+    <link rel="stylesheet" href="/petmarket/app/resources/css/style.css">
+    <style>
+      body{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+    </style>
 </head>
 <body class="bg-LIGHT">
     
 <!-- Header -->
-<nav class="navbar navbar-dark bg-dark">
+<!-- <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/notes.io/">
+    <a class="navbar-brand" href="/petmarket">
       <h4>FurEver Friends</h4>
     </a>
 
     <div class="d-flex">
-      <button class="btn btn-outline-light mx-2 active d-none" onclick="toggleLogin()" id="loginBtnNav">Login</button>
-      <button class="btn btn-outline-light mx-2 d-none" onclick="toggleSignup()" id="signupBtnNav">Sign Up</button>
-
-      <a class="btn btn-outline-secondary mx-2 d-none" href="/notes.io/user/edit" id="userBtnNav">
-          <i class="fa-regular fa-user" style="color: #ffffff;"></i>
-      </a>
-      <a class="btn btn-outline-danger mx-2 d-none" href="/notes.io/logout" id="logoutBtnNav">Logout</a>
-      
+      <button class="btn btn-outline-light mx-2 active " onclick="toggleLogin()" id="loginBtnNav">Login</button>
+      <button class="btn btn-outline-light mx-2 " onclick="toggleSignup()" id="signupBtnNav">Sign Up</button>
       </div>
   </div>
+</nav> -->
+
+<header class="header">
+
+<a href="#" class="logo"><i class="fas fa-paw"></i> FurrEver friEnd </a>
+
+<nav class="navbar">
+
+
+            <button class="btn" class="" id="loginBtnNav" onclick="toggleLogin()">Login</button>
+            <button class="btn" class="" id="signupBtnNav" onclick="toggleSignup()">Signup</button>
+
+
 </nav>
+
+
+
+
+
+</header>
+
+
+
 
 <!-- Basically, this main tag renders the entire Main Views of different pages based on the request URI. -->
 
@@ -119,17 +141,5 @@
 
 <?php require(ROOT .'app/resources/js/scripts.bundle.php') ?>
 
-
-<?php 
-  
-  if (isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == true) {
-
-    echo "<script> loggedInStatus(true); </script>";
-}
-else{
-    echo "<script> loggedInStatus(false); </script>";
-}
-
-?>
 </body>
 </html>

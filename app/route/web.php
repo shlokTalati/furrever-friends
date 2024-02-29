@@ -8,11 +8,9 @@ $authUrl = array(
 $appUrl = array(
     "/",
     "/home" => "home.php",
-    "/userprofile" => "userProfile.php"
-    
+    "/userprofile" => "userProfile.php",
+    "/faq"=> "faq.php", 
 );
-
-
 
 if($request_uri_path != "/auth" && $_SESSION['loggedInStatus'] == false){
     header("Location: /petmarket/auth");
@@ -27,5 +25,5 @@ if(in_array($request_uri_path, $authUrl)){
 else if(array_key_exists($request_uri_path, $appUrl)){
     // require(ROOT .'app/controller/home.php');
     $viewPath = $appUrl[$request_uri_path];
-    require(ROOT .'app/resources/view/main.php');
+    require(ROOT .'app/resources/view/layout.php');
 }
