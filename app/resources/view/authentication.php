@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,19 +17,6 @@
 </head>
 <body class="bg-LIGHT">
     
-<!-- Header -->
-<!-- <nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/petmarket">
-      <h4>FurEver Friends</h4>
-    </a>
-
-    <div class="d-flex">
-      <button class="btn btn-outline-light mx-2 active " onclick="toggleLogin()" id="loginBtnNav">Login</button>
-      <button class="btn btn-outline-light mx-2 " onclick="toggleSignup()" id="signupBtnNav">Sign Up</button>
-      </div>
-  </div>
-</nav> -->
 
 <header class="header">
 
@@ -37,16 +25,11 @@
 <nav class="navbar">
 
 
-            <button class="btn" class="" id="loginBtnNav" onclick="toggleLogin()">Login</button>
-            <button class="btn" class="" id="signupBtnNav" onclick="toggleSignup()">Signup</button>
+            <button class="btn" id="loginBtnNav" onclick="toggleLogin()">Login</button>
+            <button class="btn" id="signupBtnNav" onclick="toggleSignup()">Signup</button>
 
 
 </nav>
-
-
-
-
-
 </header>
 
 
@@ -58,11 +41,11 @@
  
  <!-- Login Container -->
   <!-- Login Container -->
-  <div class="container mt-5 pt-5" id="loginContainer">
+  <div class="" id="loginContainer">
     <div class="container px-5">
       <h1 class="text-light">Login</h1>
       <br><br>
-      <form action="/petmarket/auth" method="post">
+      <form action="/petmarket/authentication" method="post">
 
         <div class="form-floating mb-4">
           <input type="email" class="form-control" id="loginEmail" placeholder="name@example.com" name="loginEmail"
@@ -85,11 +68,11 @@
 
   <!-- Signup Container -->
   <!-- Signup Container -->
-  <div class="container mt-5 pt-5 d-none" id="signupContainer">
+  <div class="d-none" id="signupContainer">
     <div class="container px-5">
       <h1 class="text-light">Sign Up</h1>
       <br><br>
-      <form action="/petmarket/auth" method="post">
+      <form action="/petmarket/authentication" method="post">
 
         <div class="form-floating mb-4">
           <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required>
@@ -139,7 +122,57 @@
 <!-- Footer -->
 <?php require(ROOT .'app/resources/component/footer.php') ?>
 
-<?php require(ROOT .'app/resources/js/scripts.bundle.php') ?>
+<script>
+  
+var loginBtnNav = document.getElementById("loginBtnNav");
+var signupBtnNav = document.getElementById("signupBtnNav");
+
+var loginContainer = document.getElementById("loginContainer");
+var signupContainer = document.getElementById("signupContainer");
+
+
+    function toggleLogin() {
+    
+    //Switches between Login Form and Signup Form
+    loginContainer.classList.remove("d-none");
+    signupContainer.classList.add("d-none");
+    
+    //Changes active status of Login and Signup button on toggle
+        loginBtnNav.classList.add("active");
+        signupBtnNav.classList.remove("active");
+        
+        //Nulls all the values of previous tab
+        document.getElementById("signupName").value = "";
+    document.getElementById("signupEmail").value = "";
+    document.getElementById("signupPhone").value = "";
+    document.getElementById("signupPassword").value = "";
+    document.getElementById("signupDob").value = "";
+    document.getElementById("signupCity").value = "";
+        
+        
+        console.log("Login Toggled")
+    }
+    
+    function toggleSignup() {
+
+        //Switches between Login Form and Signup Form
+        loginContainer.classList.add("d-none");
+        signupContainer.classList.remove("d-none");
+        
+        //Changes active status of Login and Signup button on toggle
+        loginBtnNav.classList.remove("active");
+        signupBtnNav.classList.add("active");
+        
+        //Nulls all the values of previous tab
+        document.getElementById("loginEmail").value = "";
+        document.getElementById("loginPassword").value = "";
+        
+        
+        console.log("Signup Toggled");
+        
+        
+    }
+</script>
 
 </body>
 </html>

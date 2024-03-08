@@ -29,14 +29,13 @@ if(isset($_POST['signupEmail'])){
 
 // Logout
 // Logout
-if($_SERVER['REQUEST_URI'] == '/petmarket/logout'){
+if(isset($_GET['logout']) && $_GET['logout'] == true){
     $_SESSION['loggedInStatus'] = false;
     $_SESSION['user'] = null;
     session_destroy();
-    header("Location: /petmarket/auth");
+    header("Location: /petmarket/authentication");
 }
 
-
-//Authentication View (Login/Signup)
-require(ROOT .'app/resources/view/authentication.php');
 ?>
+
+<?php require(ROOT .'app/resources/view/authentication.php'); ?> 

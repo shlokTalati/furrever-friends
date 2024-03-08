@@ -18,7 +18,16 @@ class User extends Database
     }
 
     function signup($name, $email, $password, $phone, $dob, $city)
-    {
+{
+    // Check if email already exists
+    $check_sql = "SELECT * FROM user WHERE email = '$email'";
+    $check_result = mysqli_query($this->connection, $check_sql);
+
+    if (mysqli_num_rows($check_result) > 0) {
+        // Email already registered
+        return "Email already registered";
+    } else {
+        // Proceed with signup
         $sql = "INSERT INTO user (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
         $result = mysqli_query($this->connection, $sql);
 
@@ -28,6 +37,9 @@ class User extends Database
             return false;
         }
     }
+}
+
+   
 
     function updateUser($name, $email, $password, $phone, $dob, $city)
     {
