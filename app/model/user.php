@@ -25,7 +25,8 @@ class User extends Database
 
     if (mysqli_num_rows($check_result) > 0) {
         // Email already registered
-        return "Email already registered";
+        return false;
+
     } else {
         // Proceed with signup
         $sql = "INSERT INTO user (name, email, password, phone, dob, city) VALUES ('$name', '$email', '$password', '$phone', '$dob', '$city')";
