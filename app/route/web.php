@@ -29,5 +29,4 @@ if($request_uri_path == '/authentication'){
 }
 else if(array_key_exists($request_uri_path, $appUrl)){
     include(ROOT .'app/controller/'.$appUrl[$request_uri_path]);
-    echo "Auth Controller not called";
 }
