@@ -86,6 +86,9 @@
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Vaccination Status:</strong> <?php echo $pet["vaccination_status"]; ?></p>
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Extra Info:</strong> <?php echo $pet["extra_info"]; ?></p>
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Availability:</strong> <?php echo $pet["availability"]; ?></p>
+            <!-- Add a link for adopting -->
+            <br>
+            <a href="#" style="display: inline-block; text-decoration: none; background-color: #4CAF50; color: white; padding: 10px 20px; border-radius: 5px; transition: background-color 0.3s;">Adopt Me</a>
         </div>
     <?php endforeach; ?>
         </div>
