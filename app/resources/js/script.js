@@ -10,10 +10,10 @@ document.querySelector("#login-btn").onclick = () => {
     navbar.classList.remove('active');
 }
 
-window.onscroll = () => {
-    login.classList.remove('active');
-    navbar.classList.remove('active');
-}
+// window.onscroll = () => {
+//     login.classList.remove('active');
+//     navbar.classList.remove('active');
+// }
 
 var swiper = new Swiper(".gallery-slider", {
     grabCursor:true,

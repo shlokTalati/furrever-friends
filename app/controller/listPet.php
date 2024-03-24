@@ -1,5 +1,4 @@
 <?php require(ROOT . 'app/model/Pet.php'); ?>
-<?php require(ROOT .'app/controller/base.php'); ?>
 
 <?php
 $Pet = new Pet();
@@ -14,4 +13,11 @@ if (isset($_POST['user_email'])) {
         echo "<script> alert('Registration of pet unsuccesful please try again!'); </script>";
     }
 }
+
+$species_data = $Pet->get_all_data('species');
+$breed_data = $Pet->get_all_data('breed');
 ?>
+
+
+
+<?php require(ROOT .'app/controller/base.php'); ?>

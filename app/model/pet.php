@@ -25,8 +25,13 @@ class Pet extends Database
     {
         $sql = "SELECT * FROM listed_pet";
 
-        // Execute the query
-        $result = mysqli_query($this->connection, $sql);
+        try{
+            // Execute the query
+            $result = mysqli_query($this->connection, $sql);
+        }
+        catch(Exception $e){
+            echo $e->getMessage();
+        }
 
         // Check if any rows were returned
         $petData = array();
@@ -39,36 +44,30 @@ class Pet extends Database
         }
     }
 
+    public function get_all_data($table_name){
+        //$table_name will be the table Name
+        //Eg. $pet = get_all_data('breed');
+        $sql = "SELECT * FROM $table_name";
 
-        //Get pet data 
-        // This is temporalily commented 
-        //     public function get_petdata(){
-        //         $sql = "SELECT * FROM listed_pet";
+            // Execute the query
+            $result = mysqli_query($this->connection, $sql);
 
-        //     // Execute the query
-        //     $result = mysqli_query($this->connection, $sql);
+            if($result != false){
 
-        //     // Check if any rows were returned
-        //     if (mysqli_num_rows($result) > 0) {
-        //         // Output data of each row
-        //         while($row = mysqli_fetch_assoc($result)) {
-        //             echo "User Email: " . $row["user_email"]. " - Species ID: " . $row["species_id"]. " - Breed ID: " . $row["breed_id"]. " - Name: " . $row["name"]. "<br>";
-        //             // You can output other fields as needed
-        //         }
-        //     } else {
-        //         echo "No pet listings found";
-        //     }
-
-        //     // Close the database connection
-        //     mysqli_close($this->connection);
-        // }
-
-
-
-        //     // Close the database connection
-        //     mysqli_close($this->connection);
-
-        //     return $petData;
-    
+                // Check if any rows were returned
+                $faq = array();
+                if (mysqli_num_rows($result) > 0) {
+                    // Output data of each row
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        $data[] = $row;
+                    }
+                    return $data;
+                }
+            }
+            else{
+                return "Error: " . mysqli_error($this->connection);
+            }
+    }
+      
 }
 ?>

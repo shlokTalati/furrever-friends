@@ -126,10 +126,6 @@ section{
   color: var(--main);
 }
 
-#menu-btn{
-  display: none;
-}
-
 /* login form */
 .header .login-form{
   position: absolute;
@@ -441,9 +437,6 @@ section{
 
 @media (max-width: 768px){
 
-  #menu-btn{
-    display: inline-block;
-  }
 
   .header .navbar{
     position: absolute;
