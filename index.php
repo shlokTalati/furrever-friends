@@ -1,5 +1,4 @@
 <?php require('init.php'); ?>
-<?php require(ROOT. 'helper.php') ?>
 
 
 <?php

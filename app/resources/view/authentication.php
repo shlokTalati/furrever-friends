@@ -8,6 +8,56 @@
 
   <!-- Link to your external CSS file for the color scheme -->
   <link rel="stylesheet" href="/petmarket/app/resources/css/style.css">
+  <style>
+    body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+  font-family: Arial, sans-serif; /* Use your preferred font */
+}
+
+.container {
+  max-width: 600px; /* Adjust as needed */
+  width: 100%;
+  padding: 0 20px;
+}
+
+  /* Main section styles */
+.container.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+  /* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  padding: 15px;
+  border: 1px solid var(--main);
+  border-radius: 20px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+.btn-outline-light {
+  padding: 15px 25px;
+  background-color: var(--main);
+  color: var(--white);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-outline-light:hover {
+  background-color: green;
+  color: var(--white);
+}
+  </style>
 </head>
 
 <body style="display: flex; flex-direction: column; min-height: 100vh; background-color: #f0f0f0;">
@@ -22,55 +72,56 @@
     </nav>
   </header>
 
-  <main class="container" style="display: flex; justify-content: center; align-items: center; flex-direction: column; margin-top: 20px;">
+  <!-- login and signin -->
 
+<main class="container main">
     <!-- Login Container -->
-    <div id="loginContainer" style="display: block;">
-      <div class="container px-5">
-        <h1 class="text-light">Login</h1>
+    <div id="loginContainer">
+      <div class="container">
+        <h1>Login</h1>
         <form action="/petmarket/authentication" method="post">
           <div class="form-group">
-            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="loginEmail" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="loginEmail" required>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="loginPassword" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="password" class="form-control" id="loginPassword" placeholder="Password" name="loginPassword" required>
           </div>
           <br>
-          <input type="submit" class="btn btn-outline-light" value="Login" onmouseover="buttonHover(this)" onmouseout="buttonHover(this)" style="padding: 15px 25px; border: 1px solid #555; background-color: transparent; color: #555; cursor: pointer; transition: background-color 0.3s ease;">
+          <input type="submit" class="btn btn-outline-light" value="Login">
         </form>
       </div>
     </div>
-
+  
     <!-- Signup Container -->
     <div id="signupContainer" style="display: none;">
-      <div class="container px-5">
-        <h1 class="text-light">Sign Up</h1>
+      <div class="container">
+        <h1>Sign Up</h1>
         <form action="/petmarket/authentication" method="post">
           <div class="form-group">
-            <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required>
           </div>
           <div class="form-group">
-            <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" name="signupEmail" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="email" class="form-control" id="signupEmail" placeholder="Enter email" name="signupEmail" required>
           </div>
           <div class="form-group">
-            <input type="number" class="form-control" id="signupPhone" placeholder="Contact Number" name="signupPhone" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="number" class="form-control" id="signupPhone" placeholder="Contact Number" name="signupPhone" required>
           </div>
           <div class="form-group">
-            <input type="password" class="form-control" id="signupPassword" placeholder="Password" name="signupPassword" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="password" class="form-control" id="signupPassword" placeholder="Password" name="signupPassword" required>
           </div>
           <div class="form-group">
-            <input type="date" class="form-control" id="signupDob" name="signupDob" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="date" class="form-control" id="signupDob" name="signupDob" required>
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" id="signupCity" placeholder="City" name="signupCity" required style="padding: 15px; border: 1px solid #ccc; border-radius: 20px; width: 100%; box-sizing: border-box; font-size: 16px;">
+            <input type="text" class="form-control" id="signupCity" placeholder="City" name="signupCity" required>
           </div>
           <br>
-          <input type="submit" class="btn btn-outline-light" value="Sign Up" onmouseover="buttonHover(this)" onmouseout="buttonHover(this)" style="padding: 15px 25px; border: 1px solid #555; background-color: transparent; color: #555; cursor: pointer; transition: background-color 0.3s ease;">
+          <input type="submit" class="btn btn-outline-light" value="Sign Up">
         </form>
       </div>
     </div>
-
   </main>
+  
 <br><br>
   <?php 
 require(ROOT .'app/resources/component/footer.php') 

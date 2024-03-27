@@ -85,12 +85,21 @@
     var petData = <?php echo json_encode($petData); ?>;
     var species_data = <?php echo json_encode($species_data); ?>;
     var breed_data = <?php echo json_encode($breed_data); ?>;
-
     var species_select = document.getElementById('species_select');
     var breed_select = document.getElementById('breed_select');
     var petDisplayContainer = document.getElementById('petDisplayContainer');
+    
+    //Creates an Associative Array of Species that include id and name
+    var species_assoc = {};  
+    species_data.forEach((obj)=> {
+    species_assoc[obj.id] = obj.name;
+});
 
-
+    //Creates an Associative Array of Breed that include id and name
+    var breed_assoc = {};  
+    breed_data.forEach((obj)=> {
+    breed_assoc[obj.id] = obj.name;
+});
 
     // Update the Pets Display
     function update_pets(property = null, filterId = null) {
@@ -108,8 +117,8 @@
                 
                 <h2 style="margin-top: 0; color: #333;">${element.name}</h2>
                 <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>User Email:</strong>${element.user_email}</p>
-                <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Species ID:</strong> ${element.species_id}</p>
-                <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Breed ID:</strong> ${element.breed_id}</p>
+                <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Species:</strong> ${species_assoc[element.species_id]}</p>
+                <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Breed:</strong> ${breed_assoc[element.breed_id]}</p>
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Gender:</strong> ${element.gender}</p>
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Age:</strong> ${element.age}</p>
             <p style="margin: 5px 0; font-size: 14px; color: #666;"><strong>Nature:</strong> ${element.nature}</p>
