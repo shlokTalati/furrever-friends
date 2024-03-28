@@ -13,6 +13,7 @@ $appUrl = array(
     "/browsepet"=> "browsepet.php",
     "/exploreyourtype"=> "exploreyourtype.php",
     "/typeresult"=> "typeresult.php",
+    "/aboutus"=> "aboutus.php"
     
 
 );

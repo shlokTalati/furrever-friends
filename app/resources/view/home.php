@@ -2,7 +2,7 @@
     <section class="home" id="home">
 
         <div class="content">
-            <h3><b> Don't Buy, Adopt </b></h3>
+           <a href="/petmarket/browsepet"> <h3><b> Don't Buy, Adopt </b></h3> </a>
             <h4> Now Choose And Adopt <br> Your Best Buddy. </h4>
         </div>
 
@@ -11,7 +11,7 @@
     <!-- about -->
     <section class="about" id="about">
 
-        <h3 class="deco-title"> About us </h3>
+      <a href="/petmarket/aboutus">  <h3 class="deco-title"> About us </h3> </a>
 
         <div class="box-container">
 
@@ -21,7 +21,7 @@
 
             <div class="content">
                 <h3 class="title"> you can find all the most popular pet species ! </h3>
-                <p> kjsnlajidhfivhbasbvwivwluiugebrvuavnvhn </p>                                        <!-- Ruf sentence -->
+                <p> Welcome to FurrEver friEnd, where love finds a home. We're dedicated to connecting furry friends with loving families. Join us in our mission to rescue, nurture, and find forever homes for pets in need. Together, let's make tails wag and hearts purr. </p>                                        <!-- Ruf sentence -->
             </div>
 
         </div>
@@ -80,7 +80,7 @@
                 <img src="/petmarket/app/resources/img/gall-1.png" alt="">
                 <div class="content">
                     <h3> Dog </h3>
-                    <a href="#" class="btn"> see datails </a>
+                    <a href="#" class="btn"> see details </a>
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                 <img src="/petmarket/app/resources/img/gall-2.jpg" alt="">
                 <div class="content">
                     <h3> Cats </h3>
-                    <a href="#" class="btn"> see datails </a>
+                    <a href="#" class="btn"> see details </a>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
                 <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
                 <div class="content">
                     <h3> Bird </h3>
-                    <a href="#" class="btn"> see datails </a>
+                    <a href="#" class="btn"> see details </a>
                 </div>
             </div>
 
@@ -104,7 +104,7 @@
                 <img src="/petmarket/app/resources/img/animals_4.jpg" alt="">
                 <div class="content">
                     <h3> Rabbit </h3>
-                    <a href="#" class="btn"> see datails </a>
+                    <a href="#" class="btn"> see details </a>
                 </div>
             </div>
         </div>

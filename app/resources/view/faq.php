@@ -1,5 +1,31 @@
-<section class="faq-section">
-    <h1>Frequently Asked Questions</h1>
+<style>
+    header {
+            background-color: #ff6e01;
+            color: #ffffff;
+            padding: 10px;
+            text-align: center;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+        #head{
+            color: #000;
+        }
+</style>
+
+<header>
+    <h1 id="head"> Frequently Asked Questions</h1>
+</header>
  <br>
     <?php 
    foreach ($faq as $faq) {
