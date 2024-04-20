@@ -132,7 +132,7 @@
             20px; border-radius: 5px; transition: background-color 0.3s;">Adopt Me</a>
             
             </div>
-            </div>`
+            </div>` 
             }
         });
 

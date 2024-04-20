@@ -11,6 +11,8 @@
             background-color: #f5f5f5;
             margin: 0;
             padding: 0;
+            font-size: 16px;
+            line-height: 1.6;
         }
 
         .container {
@@ -27,6 +29,7 @@
             text-align: center;
             color: #333;
             margin-bottom: 20px;
+            font-size: 24px;
         }
 
         label {
@@ -34,18 +37,33 @@
             font-weight: bold;
             color: #333;
             margin-bottom: 5px;
+            font-size: 18px;
+        }
+
+        .input-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .input-container input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .input-container label {
+            flex: 1;
         }
 
         input[type="radio"],
         select,
         textarea {
-            width: 100%;
+            width: calc(100% - 24px);
             padding: 12px;
             margin-bottom: 15px;
             box-sizing: border-box;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #fff;
+            font-size: 16px;
         }
 
         textarea {
@@ -63,6 +81,7 @@
             margin-top: 15px;
             width: 100%;
             transition: background-color 0.3s ease;
+            font-size: 16px;
         }
 
         input[type="submit"]:hover {
@@ -86,7 +105,6 @@
             color: #ffffff;
             padding: 10px;
             text-align: center;
-            
             animation: fadeIn 1s ease-out;
         }
 
@@ -227,7 +245,6 @@
             // Determine pet type based on selections
             var petType = '';
 
-            // Example logic, you can customize based on your requirements
             if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'yes' && otherPets === 'no') {
                 petType = 'Dog';
             } else if (size === 'small' && attention === 'no' && space === 'small' && activity === 'low' && allergy === 'no' && time === 'low' && training === 'no' && otherPets === 'yes') {
@@ -244,6 +261,18 @@
                 petType = 'Goat';
             } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'low' && allergy === 'yes' && time === 'low' && training === 'no' && otherPets === 'yes') {
                 petType = 'Ferret';
+            } else if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'no' && otherPets === 'no') {
+                petType = 'Hamster';
+            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'medium' && allergy === 'no' && time === 'medium' && training === 'yes' && otherPets === 'yes') {
+                petType = 'Guinea Pig';
+            } else if (size === 'large' && attention === 'no' && space === 'large' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'no' && otherPets === 'no') {
+                petType = 'Pig';
+            } else if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'low' && allergy === 'no' && time === 'medium' && training === 'no' && otherPets === 'yes') {
+                petType = 'Fish';
+            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'high' && allergy === 'yes' && time === 'high' && training === 'no' && otherPets === 'no') {
+                petType = 'Snake';
+            } else if (size === 'large' && attention === 'no' && space === 'large' && activity === 'low' && allergy === 'no' && time === 'low' && training === 'no' && otherPets === 'yes') {
+                petType = 'Turtle';
             } else {
                 petType = 'Any other pet';
             }
