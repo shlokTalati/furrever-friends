@@ -10,12 +10,16 @@ $appUrl = array(
     "/userprofile" => "userProfile.php",
     "/faq"=> "faq.php", 
     "/listpet"=> "listPet.php",
-    "/browsepet"=> "browsepet.php",
+    "/browsepet"=> "browsepet2.php",
     "/exploreyourtype"=> "exploreyourtype.php",
     "/typeresult"=> "typeresult.php",
-    "/aboutus"=> "aboutus.php"
+    "/aboutus"=> "aboutus.php",
+    "/blog"=> "faqblog.php",
+    "/petdetails"=> "pet_details.php",
+    "/wishlist"=> "wishlist.php",
+    "/petadopt"=> "petadopt.php",
+    "/requests" => "requests.php"
     
-
 );
 
 if($request_uri_path != "/authentication" && $_SESSION['loggedInStatus'] == false){

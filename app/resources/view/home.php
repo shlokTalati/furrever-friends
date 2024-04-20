@@ -95,7 +95,7 @@
             <div class="box">
                 <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
                 <div class="content">
-                    <h3> Bird </h3>
+                    <h3> Cows </h3>
                     <a href="#" class="btn"> see details </a>
                 </div>
             </div>
@@ -103,7 +103,7 @@
             <div class="box">
                 <img src="/petmarket/app/resources/img/animals_4.jpg" alt="">
                 <div class="content">
-                    <h3> Rabbit </h3>
+                    <h3> Horses </h3>
                     <a href="#" class="btn"> see details </a>
                 </div>
             </div>
