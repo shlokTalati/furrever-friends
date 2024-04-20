@@ -1,6 +1,7 @@
 <?php session_start();
-error_reporting(0);
+//error_reporting(0);
 ?>
+
 
 <!-- Define the root path -->
 <?php define('ROOT', $_SERVER['DOCUMENT_ROOT'] . '/petmarket/'); 
