@@ -7,15 +7,19 @@ $authUrl = array(
 $appUrl = array(
     "/",
     "/home" => "home.php",
-    "/userprofile" => "userProfile.php",
+    "/userprofile" => "user-profile.php",
     "/faq"=> "faq.php", 
-    "/listpet"=> "listPet.php",
-    "/browsepet"=> "browsepet.php",
-    "/exploreyourtype"=> "exploreyourtype.php",
-    "/typeresult"=> "typeresult.php",
-    "/aboutus"=> "aboutus.php"
+    "/listpet"=> "list-pet.php",
+    "/browsepet"=> "browse-pet.php",
+    "/exploreyourtype"=> "explore-your-type.php",
+    "/typeresult"=> "type-result.php",
+    "/aboutus"=> "about-us.php",
+    "/blog"=> "faq-blog.php",
+    "/petdetails"=> "pet-details.php",
+    "/wishlist"=> "wishlist.php",
+    "/adopt"=> "adopt.php",
+    "/requests" => "requests.php"
     
-
 );
 
 if($request_uri_path != "/authentication" && $_SESSION['loggedInStatus'] == false){

@@ -68,6 +68,7 @@
     <div id="loginContainer">
       <div class="container">
         <h1>Login</h1>
+        <br>
         <form action="/petmarket/authentication" method="post">
           <div class="form-group">
             <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="loginEmail" required>
@@ -84,6 +85,7 @@
     <div id="signupContainer" style="display: none;">
       <div class="container">
         <h1>Sign Up</h1>
+        <br>
         <form action="/petmarket/authentication" method="post">
           <div class="form-group">
             <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required>

@@ -1,9 +1,0 @@
-Completed:-
-Login, Database Connection, Logout, Login Page, SignUp
-Species and Breed Filter Done
-Footer Added in Auth page
-
-
-Pending:-
-Make Dropdown Menu/Radio Button in Nature, Food Preferance in ListPet Page
-Make all Filters work in BrowsePet page.

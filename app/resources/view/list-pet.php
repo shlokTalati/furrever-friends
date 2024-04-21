@@ -115,7 +115,9 @@
         input[type=number] {
             -moz-appearance: textfield;
         }
-        header,h1{
+
+        header,
+        h1 {
             color: #000;
         }
     </style>
@@ -127,7 +129,7 @@
         <h1>Pet Listing Form</h1>
     </header>
 
-    <form action="/petmarket/listpet" method="post">
+    <form action="/petmarket/listpet" enctype="multipart/form-data" method="post">
 
         <label for="user_email">User Email:</label>
         <input type="email" id="user_email" name="user_email" value="<?php echo $_SESSION['user']['email']; ?>" readonly>
@@ -176,14 +178,14 @@
         <label for="list_extra_info">Extra Info:</label>
         <textarea id="list_extra_info" name="list_extra_info" required></textarea>
 
-        <!-- <label for="pet_photoFile">Upload Photo</label>
-        <input type="file" name="pet_photo" multiple accept=".jpg, .jpeg, .png"> -->
+        <label for="pet_photoFile">Upload Photo</label>
+        <input type="file" name="pet_photo" >
 
         <br>
         <br>
         <br>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" name="listpet">
     </form>
 
     <br><br>
@@ -215,3 +217,107 @@
         update_species();
         update_breeds();
     </script>
+
+
+
+    <?php
+    // Check if form is submitted
+   
+
+
+
+
+
+
+
+        // if (isset($_FILES["pet_photo"]) && $_FILES["pet_photo"]["error"] == 0) {
+        //     $targetDir = "/app/images/"; // Directory where you want to store the uploaded files
+        //     $img_name = $_FILES['pet_photo']['name'];
+        //     $img_size = $_FILES['pet_photo']['size'];
+        //     $tmp_name = $_FILES['pet_photo']['tmp_name'];
+        //     $error = $_FILES['pet_photo']['error'];
+
+        //     // Check if file already exists
+        //     if (file_exists($targetFile)) {
+        //         echo "Sorry, file already exists.";
+        //     } else {
+        //         // Move uploaded file to designated directory
+        //         if (move_uploaded_file($_FILES["pet_photo"]["tmp_name"], $targetFile)) {
+        //             echo "The file " . basename($_FILES["pet_photo"]["name"]) . " has been uploaded.";
+        //         } else {
+        //             echo "Sorry, there was an error uploading your file.";
+        //         }
+        //     }
+        // } else {
+        //     echo "No file uploaded.";
+        // }
+    // }
+
+    // Fetch the image
+    // $imagePath = "uploads/" . basename($_FILES["pet_photo"]["name"]);
+    ?>
+
+    
+
+
+    <?php
+
+    // if(isset($_POST['createEvent'])){
+    //     require "eventClass.php";
+    //     $obj = new db();    
+
+    //     $eventName = $_POST['EventName'];
+    //     $organizerName = $_POST['OrganizerName'];
+    //     $date = $_POST['date'];
+    //     $time = $_POST['time'];
+    //     $venue = $_POST['veneu']; 
+    //     $Description = $_POST['description'];
+    //     $cost = $_POST['cost'];
+
+    //     // Handling image upload
+    //     $target_dir = "image/";
+    //     $img_name = $_FILES['eImage']['name'];
+    //     $img_size = $_FILES['eImage']['size'];
+    //     $tmp_name = $_FILES['eImage']['tmp_name'];
+    //     $error = $_FILES['eImage']['error'];
+
+    //     if($error === 0){
+    //         if($img_size > 125000){
+    //             $em = "File size too large";
+    //             header('location:createEvent.php?error=' . $em); 
+    //             exit;   
+    //         } else {
+    //             $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
+    //             $new_img_name = uniqid() . "." . $img_ex;
+    //             $target_file = $target_dir . $new_img_name;
+
+    //             // Move uploaded file to desired location
+    //             if(move_uploaded_file($tmp_name, $target_file)) {
+    //                 // Getting user ID from session
+    //                 $s_id = $_SESSION['epId'];
+
+    //                 // Call the event_register function with all the parameters
+    //                 $r = $obj->event_register($eventName, $organizerName, $date, $time, $venue, $Description, $cost, $target_file, $s_id);
+
+    //                 if($r > 0) {
+    //                     header('location:manageEvent.php');
+    //                     exit;
+    //                 } else {
+    //                     $em = "Failed to register event";
+    //                     header('location:createEvent.php?error=' . $em); 
+    //                     exit;
+    //                 }
+    //             } else {
+    //                 $em = "Error uploading file";
+    //                 header('location:createEvent.php?error=' . $em); 
+    //                 exit;
+    //             }
+    //         }
+    //     } else {
+    //         $em = "Error uploading file";
+    //         header('location:createEvent.php?error=' . $em); 
+    //      exit;
+    // }
+    // }
+
+    ?>

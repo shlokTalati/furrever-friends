@@ -67,18 +67,21 @@
     </header>
     <div class="container">
         <h2>Our Mission</h2>
-        <p>We are dedicated to finding loving homes for pets in need. Our mission is to connect animals in shelters with caring individuals and families who are ready to welcome them into their lives.</p>
+        <p>We are dedicated to finding loving homes for pets in need. Our mission is to connect animals in shelters with caring individuals and families who are ready to welcome them into their lives.</p> <br>
         
         <h2>Why Choose Us?</h2>
-        <p>At Pet Adoption, we prioritize the well-being of our animals above all else. Our team works tirelessly to ensure that each pet receives proper care, love, and attention while they wait for their forever home. By choosing us, you're not just adopting a pet – you're saving a life.</p>
+        <p>At Pet Adoption, we prioritize the well-being of our animals above all else. Our team works tirelessly to ensure that each pet receives proper care, love, and attention while they wait for their forever home. By choosing us, you're not just adopting a pet – you're saving a life.</p> <br>
         
         <h2>Meet Our Team</h2>
-        <p>Our team consists of passionate animal lovers who are dedicated to making a difference in the lives of homeless pets. From our volunteers who spend countless hours socializing with the animals to our adoption counselors who match pets with their perfect families, each member plays a vital role in our organization.</p>
+        <p>Our team consists of passionate animal lovers who are dedicated to making a difference in the lives of homeless pets. From our volunteers who spend countless hours socializing with the animals to our adoption counselors who match pets with their perfect families, each member plays a vital role in our organization.</p> <br>
         
         <h2>Contact Us</h2>
-        <p>If you have any questions about our adoption process, the animals available for adoption, or if you're interested in volunteering, please don't hesitate to reach out to us.</p>
+        <p>If you have any questions about our adoption process, the animals available for adoption, or if you're interested in volunteering, please don't hesitate to reach out to us.</p> <br>
         <!-- <p>Email: info@petadoption.com<br>Phone: 123-456-7890</p> -->
-        <p id="emailheading">Email: </p> <p>info@FurrEverFriends.com  </p> <br> <p id="phoneheading"> Phone: </p> <p> (+91) 78748 45813 </p>
+        <h2>Email: </h2> 
+        <p><a href="mailto:info@furrEverFriends.com" style="color:black"> info@FurrEverFriends.com </a> </p> <br> 
+        <h2> Phone: </h2> 
+        <p> (+91) 78748 45813 </p>
     </div>
     <script>
         window.addEventListener('scroll', () => {
