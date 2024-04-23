@@ -2,15 +2,20 @@
 
 <?php 
 $User = new User();
-// Login
-// Login
+
 if(isset($_POST['loginEmail']) && isset($_POST['loginPassword'])){
     $login_result = $User->login($_POST['loginEmail'], $_POST['loginPassword']);
 
-    if($login_result != null){
+    if($login_result != null && !is_string($login_result)){
         $_SESSION['loggedInStatus'] = true;
         $_SESSION['user'] = $login_result;
         header("Location: /petmarket/home");
+    } else {
+        if ($login_result === "email_not_found") {
+            echo "<script>alert('Email not found! Please enter a valid email.');</script>";
+        } else if ($login_result === "incorrect_password") {
+            echo "<script>alert('Incorrect password!');</script>";
+        }
     }
 }
 
