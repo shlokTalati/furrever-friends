@@ -23,9 +23,9 @@
         }
 </style>
 
-<header>
+
     <h1 id="head"> Frequently Asked Questions</h1>
-</header>
+
  <br>
     <?php 
    foreach ($faq as $faq) {

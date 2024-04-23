@@ -5,7 +5,7 @@ $authUrl = array(
 );
 
 $appUrl = array(
-    "/",
+    "/" => "home.php",
     "/home" => "home.php",
     "/userprofile" => "user-profile.php",
     "/faq"=> "faq.php", 
@@ -14,7 +14,7 @@ $appUrl = array(
     "/exploreyourtype"=> "explore-your-type.php",
     "/typeresult"=> "type-result.php",
     "/aboutus"=> "about-us.php",
-    "/blog"=> "faq-blog.php",
+    "/blog"=> "blog.php",
     "/petdetails"=> "pet-details.php",
     "/wishlist"=> "wishlist.php",
     "/adopt"=> "adopt.php",

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Preference Questionnaire</title>
     <style>
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
@@ -118,9 +112,7 @@
             }
         }
     </style>
-</head>
 
-<body>
     <div class="container">
         <header>
             <h1>Pet Preference Questionnaire</h1>
@@ -283,6 +275,3 @@
             document.getElementById('result').style.display = 'block';
         });
     </script>
-</body>
-
-</html>

@@ -1,6 +1,6 @@
 <?php
-require(ROOT . "app/config/Database.php");
-class Info extends Database
+require(ROOT . "app/model/Base.php");
+class Info extends Base
 {
 
     public function get_faq(){

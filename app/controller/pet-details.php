@@ -4,7 +4,7 @@ require(ROOT . "/app/model/Pet.php");
 
 
 // Instantiate the Pet model
-$petModel = new Pet();
+$Pet = new Pet();
 
 // Retrieve the pet ID from the query parameter
 $petId = isset($_GET['id']) ? $_GET['id'] : null;
@@ -16,7 +16,7 @@ if ($petId === null || !is_numeric($petId)) {
 }
 
 // Fetch detailed information about the pet using the ID
-$petDetails = $petModel->get_pet_data_by_id($petId);
+$petDetails = $Pet->get_pet_data_by_id($petId);
 
 
 
@@ -30,9 +30,9 @@ if ($petDetails) {
 }
 
 
-$species_data = $petModel->get_all_data('species');
+$species_data = $Pet->get_all_data('species');
 
-$breed_data = $petModel->get_all_data('breed');
+$breed_data = $Pet->get_all_data('breed');
 
 function getNameById($id, $data) {
     foreach ($data as $item) {

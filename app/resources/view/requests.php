@@ -1,11 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Adoption Requests</title>
+
     <style>
-        
+        h1{
+            font-size: 30px;
+            text-align: center;
+            background-color: #f1f1f1;
+            padding: 20px 0px 20px 0px;
+        }
         .notification {
             background-color: #fff;
             border-radius: 8px;
@@ -37,6 +37,14 @@
             outline: none;
             transition: background-color 0.3s ease;
         }
+        .view{
+            background-color: rgb(86, 94, 245);
+            color: white;
+        }
+        .view:hover{
+            background-color: rgb(53, 63, 255);
+        }
+
         .approve {
             background-color: #2ecc71;
             color: white;
@@ -55,68 +63,60 @@
             margin-right: 5px;
         }
     </style>
-</head>
-<body>
+
+
+    
+    <?php
+    
+    if($requestData == 0){
+        echo "<h1>No pending requests</h1>";
+    } else {
+        foreach ($requestData as $data): ?>
+
     <div class="notification">
         <div class="notification-header">Adoption Request</div>
         <div class="notification-message">
-            <p><strong>akshankhanna@gmail.com</strong> wants to adopt <strong>Jim</strong> listed by you.</p>
+            <p><strong><?php echo $data['adopter_id'] ?></strong> wants to adopt <strong><?php echo $data['pet_name'] ?></strong> listed by you.</p>
             <p>Do you want to approve their adoption request?</p>
         </div>
         <div class="buttons">
+            <button class="button view" onclick="viewRequest()">View</button>
+            
+            <a href="/petmarket/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Approve">
             <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
+            </a>
+
+            <a href="/petmarket/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Reject">
             <button class="button reject" onclick="rejectRequest()"><span class="icon">&#10006;</span> Reject</button>
+            </a>
         </div>
     </div>
-    <div class="notification">
-        <div class="notification-header">Adoption Request</div>
-        <div class="notification-message">
-            <p><strong>shloktalati3@gmail.com</strong> wants to adopt <strong>Bunny</strong> listed by you.</p>
-            <p>Do you want to approve their adoption request?</p>
-        </div>
-        <div class="buttons">
-            <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
-            <button class="button reject" onclick="rejectRequest()"><span class="icon">&#10006;</span> Reject</button>
-        </div>
-    </div>
-    <div class="notification">
-        <div class="notification-header">Adoption Request</div>
-        <div class="notification-message">
-            <p><strong>panchaljay@gmail.com</strong> wants to adopt <strong>Anju</strong> listed by you.</p>
-            <p>Do you want to approve their adoption request?</p>
-        </div>
-        <div class="buttons">
-            <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
-            <button class="button reject" onclick="rejectRequest()"><span class="icon">&#10006;</span> Reject</button>
-        </div>
-    </div>
-    <div class="notification">
-        <div class="notification-header">Adoption Request</div>
-        <div class="notification-message">
-            <p><strong>patelnaman@gmail.com</strong> wants to adopt <strong>Ronaldo</strong> listed by you.</p>
-            <p>Do you want to approve their adoption request?</p>
-        </div>
-        <div class="buttons">
-            <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
-            <button class="button reject" onclick="rejectRequest()"><span class="icon">&#10006;</span> Reject</button>
-        </div>
-    </div>
+
+    <?php endforeach;
+    }
+    ?>
+   
     
 
     <!-- Other notifications can go here -->
 
     <script>
-        function approveRequest(adopterEmail) {
-            // Simulate sending an email to the adopter
-            sendEmail(adopterEmail, "Adoption Approved", "Congratulations! You have successfully adopted a pet.");
-            alert("Adoption request approved!");
+
+        function viewRequest(){
+            alert("Viewing request details...");
         }
 
-        function rejectRequest(adopterEmail) {
-            // Simulate sending an email to the adopter
-            sendEmail(adopterEmail, "Adoption Rejected", "We're sorry, but your pet adoption request has been rejected.");
-            alert("Adoption request rejected!");
-        }
+        // function approveRequest(adopterEmail) {
+        //     // Simulate sending an email to the adopter
+        //     sendEmail(adopterEmail, "Adoption Approved", "Congratulations! You have successfully adopted a pet.");
+        //     alert("Adoption request approved!");
+        // }
+
+        // function rejectRequest(adopterEmail) {
+        //     // Simulate sending an email to the adopter
+        //     sendEmail(adopterEmail, "Adoption Rejected", "We're sorry, but your pet adoption request has been rejected.");
+        //     alert("Adoption request rejected!");
+        // }
 
         function sendEmail(email, subject, message) {
             // Here you would make an API call to your backend to send the email
@@ -124,5 +124,3 @@
             console.log("Sending email to " + email + " with subject: " + subject + " and message: " + message);
         }
     </script>
-</body>
-</html>

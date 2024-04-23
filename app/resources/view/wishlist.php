@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Your Pet Adoption Wishlist</title>
+
 <style>
 
   .container {
@@ -52,8 +47,6 @@
     color: #666;
   }
 </style>
-</head>
-<body>
 
 <div class="container">
   <h1>Your Pet Adoption Wishlist</h1>
@@ -83,6 +76,3 @@
 
 
 </div>
-
-</body>
-</html>

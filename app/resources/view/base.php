@@ -34,5 +34,6 @@ require(ROOT .'app/resources/component/footer.php')
 
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script src="/petmarket/app/resources/js/script.js"></script>
+
 </body>
 </html>

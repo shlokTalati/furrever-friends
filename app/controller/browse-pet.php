@@ -5,7 +5,7 @@
 $Pet = new Pet();
 
 //Gets Pet Data where the user_email is NOT the same as the current user
-$petData = $Pet->get_data_by_constraint('listed_pet', 'user_email', $_SESSION['user']['email'], false);
+$petData = $Pet->get_browse_pet_data($_SESSION['user']['email']);
 
 
 $species_data = $Pet->get_all_data('species');

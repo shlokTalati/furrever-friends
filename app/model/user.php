@@ -1,6 +1,6 @@
 <?php 
-require(ROOT ."app/config/Database.php");
-class User extends Database
+require(ROOT . "app/model/Base.php");
+class User extends Base
 {
 
 

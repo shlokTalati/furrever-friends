@@ -19,6 +19,12 @@
   transition: .2s linear;
 }
 
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 html{
   font-size: 63%;
   overflow-x: hidden;
@@ -117,7 +123,6 @@ section{
 
 .header .icons div{
   font-size: 2.5rem;
-  margin-left: 1.7rem;
   cursor: pointer;
   color: var(--black);
 }
@@ -379,6 +384,7 @@ section{
   background: url(/petmarket/app/resources/img/footer.jpg) no-repeat;
   background-size: cover;
   padding: 3rem 7%;
+  margin-top: auto;
 }
 
 .footer .box-container{

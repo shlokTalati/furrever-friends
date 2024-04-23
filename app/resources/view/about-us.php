@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Pet Adoption</title>
-    <style>
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -60,11 +54,8 @@
             }
         }
     </style>
-</head>
-<body>
-    <header>
+
         <h1>About Us - Pet Adoption</h1>
-    </header>
     <div class="container">
         <h2>Our Mission</h2>
         <p>We are dedicated to finding loving homes for pets in need. Our mission is to connect animals in shelters with caring individuals and families who are ready to welcome them into their lives.</p> <br>
@@ -83,6 +74,7 @@
         <h2> Phone: </h2> 
         <p> (+91) 78748 45813 </p>
     </div>
+    
     <script>
         window.addEventListener('scroll', () => {
             const paragraphs = document.querySelectorAll('p');
@@ -103,5 +95,3 @@
             );
         }
     </script>
-</body>
-</html>

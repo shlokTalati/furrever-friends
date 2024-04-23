@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Adoption Blog</title>
     <style>
         /* Reset default browser styles */
         * {
@@ -136,9 +130,6 @@
             background-color: #555;
         }
     </style>
-</head>
-<body>
-    <header>
         <h1>Pet Adoption Blog</h1>
         <nav>
             <ul>
@@ -147,7 +138,6 @@
                 <li><a href="#">Educational Content</a></li>
             </ul>
         </nav>
-    </header>
     <main>
         <section id="featured-post">
             <h2>Featured Adoption Story</h2>
@@ -190,8 +180,4 @@
             </form>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2024 Pet Adoption Blog. All rights reserved.</p>
-    </footer>
-</body>
-</html>
+

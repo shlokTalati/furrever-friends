@@ -1,6 +1,6 @@
 <?php
-require(ROOT . "app/config/Database.php");
-class Pet extends Database
+require(ROOT . "app/model/Base.php");
+class Pet extends Base
 {
 
     //Register a new Pet in the database
@@ -20,32 +20,8 @@ class Pet extends Database
         return 0;
     }
     }
-   
 
-    // Get all the pet data
-    public function get_pet_data()
-    {
-        $sql = "SELECT * FROM listed_pet";
-
-        try{
-            // Execute the query
-            $result = mysqli_query($this->connection, $sql);
-        }
-        catch(Exception $e){
-            echo $e->getMessage();
-        }
-
-        // Check if any rows were returned
-        $petData = array();
-        if (mysqli_num_rows($result) > 0) {
-            // Output data of each row
-            while ($row = mysqli_fetch_assoc($result)) {
-                $petData[] = $row;
-            }
-            return $petData;
-        }
-    }
-
+  
     // Get Pet Details of a particular pet by ID
     public function get_pet_data_by_id($petId) {
         // Query to fetch pet details by ID
@@ -65,78 +41,21 @@ class Pet extends Database
 
 
 
-    //Get all the data from a particular table
-    public function get_all_data($table_name){
-        //$table_name will be the table Name
-        //Eg. $pet = get_all_data('breed');
+    public function get_browse_pet_data($user_email){
+        $sql = "SELECT * FROM listed_pet WHERE NOT user_email = '$user_email' AND availability = 1";
 
-        $sql = "SELECT * FROM $table_name";
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
 
-            // Execute the query
-            $result = mysqli_query($this->connection, $sql);
-
-            if($result != false){
-
-                // Check if any rows were returned
-                $data = array();
-                if (mysqli_num_rows($result) > 0) {
-                    // Output data of each row
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $data[] = $row;
-                    }
-                    return $data;
-                }
+        // Check if any rows were returned
+        $petData = array();
+        if (mysqli_num_rows($result) > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $petData[] = $row;
             }
-            else{
-                return "Error: " . mysqli_error($this->connection);
-            }
-    }
-
-
-    public function get_data_by_constraint($table_name, $constraint, $constraint_value, $bool){
-        
-        //Eg. $pet = get_data_by_constraint('listed_pet', 'user_email', $_SESSION['user']['email'], false)
-        //This will return all the pets that are not listed by the current user
-
-        //True bool will give data that matches the constraint
-        //False bool will give data that DIFFERS the constraint
-
-        if($bool == true){
-            $sql = "SELECT * FROM $table_name where $constraint = ";
+            return $petData;
         }
-        else{
-            $sql = "SELECT * FROM $table_name where NOT $constraint = ";
-        }
-
-        //Check if the constraint value is an integer or a string
-        if(is_int($constraint_value)){
-            $sql .= $constraint_value;
-        } else {
-            $sql .= "'$constraint_value'";
-        }
-
-
-            // Execute the query
-            $result = mysqli_query($this->connection, $sql);
-
-            if($result != false){
-
-                // Check if any rows were returned
-                $data = array();
-                if (mysqli_num_rows($result) > 0) {
-                    // Output data of each row
-                    while ($row = mysqli_fetch_assoc($result)) {
-                        $data[] = $row;
-                    }
-                    return $data;
-                }
-            }
-            else{
-                return "Error: " . mysqli_error($this->connection);
-            }
-    }
-
-    public function get_field_by_constraint($table_name, $field, $constraint, $constraint_value){
 
     }
 
@@ -200,5 +119,89 @@ class Pet extends Database
         }
     }
 
+    public function update_availability($pet_id){
+        $sql = "UPDATE listed_pet SET availability = 0 WHERE availability = 1 AND id = $pet_id";
+
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if the query was successful
+        if ($result) {
+            return 1;
+        } else {
+            echo "Error: " . mysqli_error($this->connection);
+            return 0;
+        }
+    }
+
+    public function new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children){
+
+        $sql = "INSERT INTO adoption (adopter_id, pet_id, owner_id, address, reason_to_adopt, past_experience, home_description, existing_pets, existing_children) VALUES ('$adopter_id', $pet_id, '$owner_id', '$address', '$reason_to_adopt', '$past_experience', '$home_description', $existing_pets, $existing_children)";
+
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if the query was successful
+        if ($result) {
+            return 1;
+        } else {
+            echo "Error: " . mysqli_error($this->connection);
+            return 0;
+        }
+    }
+
+    public function get_pending_requests($owner_id){
+        $sql = "SELECT * FROM adoption WHERE owner_id = '$owner_id' AND status = 'pending'";
+
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if any rows were returned
+        $pending_requests = array();
+        if (mysqli_num_rows($result) > 0) {
+            // Output data of each row
+            while ($row = mysqli_fetch_assoc($result)) {
+                $pending_requests[] = $row;
+            }
+            return $pending_requests;
+        }
+        else{
+            return 0;
+        }
+    }
+
+    public function approve_adoption($adoption_id, $pet_id, $owner_id){
+
+        $update_availability = $this->update_availability($pet_id);
+
+        $sql = "UPDATE adoption SET status = 'approved' WHERE status = 'pending' and id = $adoption_id and owner_id = '$owner_id'";
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if the query was successful
+        if ($result) {
+            return 1;
+        } else {
+            echo "Error: " . mysqli_error($this->connection);
+            return 0;
+        }
+    }
+
+    public function reject_adoption($adoption_id, $pet_id, $owner_id){
+
+        $sql = "UPDATE adoption SET status = 'rejected' WHERE status = 'pending' and id = $adoption_id and pet_id = $pet_id and owner_id = '$owner_id'";
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if the query was successful
+        if ($result) {
+            return 1;
+        } else {
+            echo "Error: " . mysqli_error($this->connection);
+            return 0;
+        }
+    }
+
+
+
 }
-?>

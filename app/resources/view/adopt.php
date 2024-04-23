@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pet Adoption Application</title>
-    <style>
-        /* Your existing CSS styles */
+<style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             /* Use a more modern sans-serif font */
@@ -36,9 +28,9 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="tel"],
+        input[type='text'],
+        input[type='email'],
+        input[type='tel'],
         textarea {
             width: 100%;
             padding: 10px;
@@ -53,7 +45,7 @@
             /* Allow vertical resizing of textarea */
         }
 
-        input[type="checkbox"] {
+        input[type='checkbox'] {
             margin-right: 5px;
             vertical-align: middle;
         }
@@ -167,9 +159,6 @@
             /* Darker green on hover */
         }
     </style>
-</head>
-
-<body>
 
     <div class="container">
         <h2>Pet Adoption Form</h2>
@@ -257,7 +246,7 @@
 
             <div class="form-group">
                 <input type="checkbox" id="terms_conditions" name="terms_conditions" required>
-                <label for="terms_conditions">I agree to the <a href="#" id="terms_popup_link">terms and conditions</a></label>
+                <label for="terms_conditions" style="display: inline;">I agree to the <a href="#" id="terms_popup_link">terms and conditions</a></label>
             </div>
 
             <button type="submit" class="submit-btn">Submit Application</button>
@@ -320,18 +309,13 @@
             </b>
 
 
-            <!-- Add other terms and conditions here -->
-            <div class="form-group">
-                <input type="checkbox" id="terms_checkbox" required>
-                <label for="terms_checkbox">I agree to the terms and conditions</label>
-            </div>
-            <button id="accept_terms_btn">Accept</button>
+           
         </div>
     </div>
 
     <script>
         // Get the modal
-        var modal = document.getElementById('terms_modal');
+        var modal = document.getElementById("terms_modal");
 
         // Get the link that opens the modal
         var termsLink = document.getElementById("terms_popup_link");
@@ -365,8 +349,7 @@
                 alert("Please agree to the terms and conditions.");
             }
         };
-    </script>
-    <script>
+   
         // Get the children option dropdown
         var childrenOption = document.getElementById("children_option");
 
@@ -381,8 +364,7 @@
                 childrenInput.style.display = "none"; // Hide the input field
             }
         });
-    </script>
-    <script>
+    
         // Get the children option dropdown
         var petOption = document.getElementById("pet_option");
 
@@ -398,6 +380,3 @@
             }
         });
     </script>
-</body>
-
-</html>

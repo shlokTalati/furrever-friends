@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Browse Pets</title>
     <style>
         .pet-container {
             background-color: #f0f0f0;
@@ -38,9 +32,7 @@
             font-weight: bold;
         }
     </style>
-</head>
 
-<body>
     <div style="display: flex;">
 
         <!-- Left Navigation Bar -->
@@ -143,6 +135,4 @@
         update_species();
         update_pets('species_id', 'all');
     </script>
-</body>
 
-</html>
