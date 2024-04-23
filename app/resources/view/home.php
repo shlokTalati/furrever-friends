@@ -72,7 +72,7 @@
     <!-- animals -->
     <section class="animal" id="animal">
 
-        <h2 class="heading"> animals </h2>
+        <h2 class="heading"> How to Take care of animals </h2>
 
         <div class="box-container">
 
@@ -80,7 +80,7 @@
                 <img src="/petmarket/app/resources/img/gall-1.png" alt="">
                 <div class="content">
                     <h3> Dog </h3>
-                    <a href="#" class="btn"> see details </a>
+                    <a href="https://www.wikihow.com/Care-for-Dogs" class="btn"> Learn  </a>
                 </div>
             </div>
 
@@ -88,25 +88,40 @@
                 <img src="/petmarket/app/resources/img/gall-2.jpg" alt="">
                 <div class="content">
                     <h3> Cats </h3>
-                    <a href="#" class="btn"> see details </a>
+                    <a href=https://www.wikihow.com/Take-Care-of-a-Cat" class="btn"> Learn </a>
                 </div>
             </div>
 
+            <div class="box">
+                <img src="/petmarket/app/resources/img/cow.jpg" alt="">
+                <div class="content">
+                    <h3> Cows </h3>
+                    <a href="https://www.wikihow.com/Care-for-Cattle" class="btn"> Learn </a>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="/petmarket/app/resources/img/h1.jpeg" alt="">
+                <div class="content">
+                    <h3> Horses </h3>
+                    <a href="https://www.wikihow.com/Take-Care-of-Your-Horse" class="btn"> Learn </a>
+                </div>
+            </div>
             <div class="box">
                 <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
                 <div class="content">
-                    <h3> Cows </h3>
-                    <a href="#" class="btn"> see details </a>
+                    <h3> Birds </h3>
+                    <a href="https://www.wikihow.com/Care-for-a-Bird" class="btn"> Learn </a>
                 </div>
             </div>
-
             <div class="box">
-                <img src="/petmarket/app/resources/img/animals_4.jpg" alt="">
+                <img src="/petmarket/app/resources/img/reptiles.png" alt="">
                 <div class="content">
-                    <h3> Horses </h3>
-                    <a href="#" class="btn"> see details </a>
+                    <h3> Reptiles </h3>
+                    <a href="https://www.wikihow.com/Category:Reptiles" class="btn"> Learn </a>
                 </div>
             </div>
+            
         </div>
     </section>
 

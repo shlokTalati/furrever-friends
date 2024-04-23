@@ -51,48 +51,43 @@
     </style>
 
     <div class="container">
-        <?php
-        
-        // Check if pet details are available
-        if ($petDetails) {
-            // Display pet details
-            echo "<h1>{$petDetails['name']}</h1>";
-            
-            // Fetch the image data from the database
-            $photoPath = $petDetails['photo_path'];
-            
-            // Display pet image if available
-            if ($photoPath && file_exists($photoPath)) {
-                echo "<img src='{$photoPath}' alt='{$petDetails['name']}'>";
-            } else {
-                echo "<p>No image available.</p>";
-            }
-            
-            echo "<p>Gender: {$petDetails['gender']}</p>";
-            echo "<p>Age: {$petDetails['age']}</p>";
-            echo "<p>Nature: {$petDetails['nature']}</p>";
-            echo "<p>Vaccination Status: {$petDetails['vaccination_status']}</p>";
-            echo "<p>Breed: {$breed_name}</p>";
-            echo "<p>Species: {$species_name}</p>";
+    <?php
 
-            echo "<p>Extra Info: {$petDetails['extra_info']}</p>";
+// Check if pet details are available
+if ($petDetails) {
+    // Display pet details
+    echo "<h1>{$petDetails['name']}</h1>";
+    
+    // Fetch the image data from the database
+    $photoPath = $petDetails['photo_path'];
+    
+    // Display pet image if available
+    if ($photoPath && file_exists($photoPath)) {
+        echo "<img src='{$photoPath}' alt='{$petDetails['name']}'>";
+    } else {
+        echo "<p>No image available.</p>";
+    }
+    
+    echo "<p>Gender: {$petDetails['gender']}</p>";
+    echo "<p>Age: {$petDetails['age']}</p>";
+    echo "<p>Nature: {$petDetails['nature']}</p>";
+    echo "<p>Vaccination Status: {$petDetails['vaccination_status']}</p>";
+    echo "<p>Breed: {$breed_name}</p>";
+    echo "<p>Species: {$species_name}</p>";
 
-           
-            
-            // Add more details as needed
-
-            // Buttons
-            echo "<a href='/petmarket/adopt?id={$petDetails['id']}' class='btn'>Adopt</a>";
-
-            // echo "<a href='/petmarket/adoptpet?id={$petDetails['id']}' class='btn'>Adopt</a>";
-            // echo "<a href='adoptpet.php' class='btn'>Adopt</a>";
-
-            echo "<a href='wishlist?id={$petDetails['id']}' class='btn'>Add to My Wishlist</a>";
-        } else {
-            // Handle the case when no pet details are found
-            echo "<p>Pet details not found.</p>";
-        }
-        ?>
+    echo "<p>Extra Info: {$petDetails['extra_info']}</p>";
+    
+    // Display email of the person listed by as a clickable link to compose an email
+    echo "<p>Listed By: <a href='mailto:{$petDetails['user_email']}'>{$petDetails['user_email']}</a></p>";
+    
+    // Buttons
+    echo "<a href='/petmarket/adopt?id={$petDetails['id']}' class='btn'>Adopt</a>";
+    echo "<a href='wishlist?id={$petDetails['id']}' class='btn'>Add to My Wishlist</a>";
+} else {
+    // Handle the case when no pet details are found
+    echo "<p>Pet details not found.</p>";
+}
+?>
         
       
     </div>

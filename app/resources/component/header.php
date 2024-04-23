@@ -1,3 +1,5 @@
+<!-- <?php echo var_dump($_SESSION['user']); ?> -->
+
 <header class="header">
   <a href="/petmarket/home" class="logo"><i class="fas fa-paw"></i> FurrEver friEnd </a>
 
