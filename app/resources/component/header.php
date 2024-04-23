@@ -1,3 +1,5 @@
+<!-- <?php echo var_dump($_SESSION['user']); ?> -->
+
 <header class="header">
   <a href="/petmarket/home" class="logo"><i class="fas fa-paw"></i> FurrEver friEnd </a>
 
@@ -16,6 +18,7 @@
     </a>
     <a href="/petmarket/userprofile">
       <div id="login-btn" class="fas fa-user"></div>
+       
     </a>
 
     <!-- Notification tab -->
@@ -32,6 +35,7 @@
     <div class="wishlist-icon">
       <a href="/petmarket/wishlist">
         <i class="fas fa-heart"></i>
+         
       </a>
     </div>
     

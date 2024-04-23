@@ -178,17 +178,17 @@
 
             <div class="form-group">
                 <label for="name">Your Name:</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" value="<?php echo $_SESSION['user']['name'] ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label for="email">Your Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" value="<?php echo $_SESSION['user']['email'] ?>" readonly>
             </div>
 
             <div class="form-group">
                 <label for="phone">Your Phone Number:</label>
-                <input type="tel" id="phone" name="phone" required>
+                <input type="tel" id="phone" name="phone" value="<?php echo $_SESSION['user']['phone'] ?>" readonly>
             </div>
 
             <div class="form-group">
@@ -198,7 +198,7 @@
 
             <div class="form-group">
                 <label for="city">City:</label>
-                <input type="text" id="city" name="city" required>
+                <input type="text" id="city" name="city" value="<?php echo $_SESSION['user']['city'] ?>"readonly>
             </div>
 
             <div class="form-group">
