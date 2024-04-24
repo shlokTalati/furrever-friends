@@ -100,27 +100,5 @@
 
     <!-- Other notifications can go here -->
 
-    <script>
 
-        function viewRequest(){
-            alert("Viewing request details...");
-        }
 
-        // function approveRequest(adopterEmail) {
-        //     // Simulate sending an email to the adopter
-        //     sendEmail(adopterEmail, "Adoption Approved", "Congratulations! You have successfully adopted a pet.");
-        //     alert("Adoption request approved!");
-        // }
-
-        // function rejectRequest(adopterEmail) {
-        //     // Simulate sending an email to the adopter
-        //     sendEmail(adopterEmail, "Adoption Rejected", "We're sorry, but your pet adoption request has been rejected.");
-        //     alert("Adoption request rejected!");
-        // }
-
-        function sendEmail(email, subject, message) {
-            // Here you would make an API call to your backend to send the email
-            // This is just a placeholder function
-            console.log("Sending email to " + email + " with subject: " + subject + " and message: " + message);
-        }
-    </script>

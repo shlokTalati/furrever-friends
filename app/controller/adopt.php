@@ -4,43 +4,37 @@ require(ROOT . "/app/model/Pet.php");
 // Instantiate the Pet model
 $Pet = new Pet();
 
-// Retrieve the pet ID from the query parameter
-$petId = isset($_GET['id']) ? $_GET['id'] : null;
 
-// Ensure the ID is valid
-if ($petId === null || !is_numeric($petId)) {
-    echo "Invalid pet ID.";
-    exit;
-}
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $adopter_id = $_SESSION['user']['id']; // Assuming you have user ID stored in session
+    $pet_id = $_POST['pet_id'];
+    $owner_id = ''; // You need to define how to get owner_id
+    $address = $_POST['address'];
+    $reason_to_adopt = $_POST['reason'];
+    $past_experience = $_POST['experience'];
+    $home_description = $_POST['home_description'];
+    $existing_pets = isset($_POST['pet_option']) && $_POST['pet_option'] == 'yes' ? $_POST['pet_count'] : 0;
+    $existing_children = isset($_POST['children_option']) && $_POST['children_option'] == 'yes' ? $_POST['children_count'] : 0;
+    $status = 'pending'; // Assuming you have a status field and defaulting to 'pending'
 
-// Fetch detailed information about the pet using the ID
-$petDetails = $Pet->get_pet_data_by_id($petId);
+    // Instantiate AdoptionModel
+    
 
-// Check if pet details are found
-if ($petDetails) {
-    // Include the view file to display the pet details
-    // include(ROOT . '/view/adoptpet.php');
-} else {
-    // Handle the case when no pet details are found
-    echo "Pet details not found.";
-}
+    // Call the new_adoption function to insert data
+    $result = $Pet->new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children, $status);
 
-
-$species_data = $Pet->get_all_data('species');
-
-$breed_data = $Pet->get_all_data('breed');
-
-function getNameById($id, $data) {
-    foreach ($data as $item) {
-        if ($item['id'] == $id) {
-            return $item['name'];
-        }
+    // Check the result and redirect accordingly
+    if ($result) {
+        // Redirect to success page or any other appropriate action
+        header("Location: success.php");
+        exit;
+    } else {
+        // Handle error, maybe redirect back to form with error message
+        echo "Error occurred while processing the form.";
     }
-    return "Breed not found"; // Return a message if the ID doesn't match any breed
 }
 
-$breed_name = getNameById($petDetails['breed_id'],$breed_data);
-$species_name = getNameById($petDetails['species_id'],$species_data);
 ?>
 
 <?php require(ROOT .'app/controller/base.php'); ?>

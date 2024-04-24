@@ -134,9 +134,9 @@ class Pet extends Base
         }
     }
 
-    public function new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children){
+    public function new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children,$status){
 
-        $sql = "INSERT INTO adoption (adopter_id, pet_id, owner_id, address, reason_to_adopt, past_experience, home_description, existing_pets, existing_children) VALUES ('$adopter_id', $pet_id, '$owner_id', '$address', '$reason_to_adopt', '$past_experience', '$home_description', $existing_pets, $existing_children)";
+        $sql = "INSERT INTO adoption (adopter_id, pet_id, owner_id, address, reason_to_adopt, past_experience, home_description, existing_pets, existing_children) VALUES ('$adopter_id', $pet_id, '$owner_id', '$address', '$reason_to_adopt', '$past_experience', '$home_description', $existing_pets, $existing_children,'pending')";
 
         // Execute the query
         $result = mysqli_query($this->connection, $sql);
@@ -149,6 +149,9 @@ class Pet extends Base
             return 0;
         }
     }
+
+    
+
 
     public function get_pending_requests($owner_id){
         $sql = "SELECT * FROM adoption WHERE owner_id = '$owner_id' AND status = 'pending'";
