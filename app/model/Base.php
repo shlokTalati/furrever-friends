@@ -1,6 +1,6 @@
 <?php 
 
-require(ROOT . "app/config/Database.php");
+require_once(ROOT . "app/config/Database.php");
 
 class Base extends Database{
 
@@ -72,7 +72,7 @@ class Base extends Database{
                 }
             }
             else{
-                return "Error: " . mysqli_error($this->connection);
+                return 0;
             }
     }
 

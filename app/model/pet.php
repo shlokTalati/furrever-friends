@@ -1,5 +1,5 @@
 <?php
-require(ROOT . "app/model/Base.php");
+require_once(ROOT . "app/model/Base.php");
 class Pet extends Base
 {
 
