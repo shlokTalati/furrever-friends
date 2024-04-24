@@ -379,36 +379,95 @@
 
         // Function to handle quiz submission
         // Function to handle quiz submission
+        // Define an array of pet types and their corresponding criteria
+        const petOptions = [{
+                petType: "Fish",
+                criteria: {
+                    time: "1",
+                    space: "small",
+                    activity: "low",
+                    grooming: "low",
+                    allergies: "no",
+                    away: "rarely",
+                    children: "no",
+                    training: "no",
+                    duration: "long",
+                    noise: "low",
+                    specializedCare: "no",
+                    socialInteraction: "low",
+                    travelFrequency: "rarely",
+                    financialResponsibilities: "yes"
+                }
+            },
+            {
+                petType: "Dog",
+                criteria: {
+                    time: "3",
+                    space: "large",
+                    activity: "high",
+                    grooming: "high",
+                    allergies: "no",
+                    away: "sometimes",
+                    children: "yes",
+                    training: "yes",
+                    duration: "long",
+                    noise: "medium",
+                    specializedCare: "yes",
+                    socialInteraction: "high",
+                    travelFrequency: "occasionally",
+                    financialResponsibilities: "yes"
+                }
+            },
+            {
+                petType: "Cat",
+                criteria: {
+                    time: "2",
+                    space: "medium",
+                    activity: "medium",
+                    grooming: "medium",
+                    allergies: "no",
+                    away: "sometimes",
+                    children: "no",
+                    training: "yes",
+                    duration: "medium",
+                    noise: "medium",
+                    specializedCare: "no",
+                    socialInteraction: "medium",
+                    travelFrequency: "occasionally",
+                    financialResponsibilities: "yes"
+                }
+            }
+            // Add more pet options as needed
+        ];
+
+        // Function to find a suitable pet based on provided criteria
+        function findSuitablePet(criteria) {
+            for (const option of petOptions) {
+                let isSuitable = true;
+                for (const key in option.criteria) {
+                    if (option.criteria[key] !== criteria[key]) {
+                        isSuitable = false;
+                        break;
+                    }
+                }
+                if (isSuitable) {
+                    return option.petType;
+                }
+            }
+            return "No specific recommendation based on provided answers.";
+        }
+
+        // Event listener for the submit button
         document.getElementById("submit-quiz").addEventListener("click", function() {
             // Get all the selected radio button values
-            var time = document.querySelector('input[name="time"]:checked').value;
-            var space = document.querySelector('input[name="space"]:checked').value;
-            var activity = document.querySelector('input[name="activity"]:checked').value;
-            var grooming = document.querySelector('input[name="grooming"]:checked').value;
-            var allergies = document.querySelector('input[name="allergies"]:checked').value;
-            var away = document.querySelector('input[name="away"]:checked').value;
-            var children = document.querySelector('input[name="children"]:checked').value;
-            var training = document.querySelector('input[name="training"]:checked').value;
-            var duration = document.querySelector('input[name="duration"]:checked').value;
-            var noise = document.querySelector('input[name="noise"]:checked').value;
-            var specializedCare = document.querySelector('input[name="specialized_care"]:checked').value;
-            var socialInteraction = document.querySelector('input[name="social_interaction"]:checked').value;
-            var travelFrequency = document.querySelector('input[name="travel_frequency"]:checked').value;
-            var financialResponsibilities = document.querySelector('input[name="financial_responsibilities"]:checked').value;
+            const criteria = {};
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(button => {
+                criteria[button.name] = button.value;
+            });
 
-            // Perform analysis based on user responses
-            var suitablePet = "";
-
-            // Example logic (you can customize this based on your criteria)
-            if (time === "1" && space === "small" && activity === "low" && grooming === "low" && allergies === "no" && away === "rarely" && children === "no" && training === "no" && duration === "long" && noise === "low" && specializedCare === "no" && socialInteraction === "low" && travelFrequency === "rarely" && financialResponsibilities === "yes") {
-                suitablePet = "Fish";
-            } else if (time === "3" && space === "large" && activity === "high" && grooming === "high" && allergies === "no" && away === "sometimes" && children === "yes" && training === "yes" && duration === "long" && noise === "medium" && specializedCare === "yes" && socialInteraction === "high" && travelFrequency === "occasionally" && financialResponsibilities === "yes") {
-                suitablePet = "Dog";
-            } else if (time === "2" && space === "medium" && activity === "medium" && grooming === "medium" && allergies === "no" && away === "sometimes" && children === "no" && training === "yes" && duration === "medium" && noise === "medium" && specializedCare === "no" && socialInteraction === "medium" && travelFrequency === "occasionally" && financialResponsibilities === "yes") {
-                suitablePet = "Cat";
-            } else {
-                suitablePet = "No specific recommendation based on provided answers.";
-            }
+            // Find a suitable pet based on user's criteria
+            const suitablePet = findSuitablePet(criteria);
 
             // Display the result
             alert("Based on your answers, a suitable pet for you is: " + suitablePet);
