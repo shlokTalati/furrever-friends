@@ -1,8 +1,10 @@
 <?php
 require(ROOT . "/app/model/Pet.php");
-
+require(ROOT . "/app/model/Mailer.php");
 // Instantiate the Pet model
 $Pet = new Pet();
+$Mailer = new Mailer();
+
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
@@ -13,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $adopter_id = $_SESSION['user']['email']; // Assuming you have user ID stored in session
     $pet_id = $_POST['pet_id'];
     // Assuming you have a way to retrieve owner_id
-    $owner_id = $petData[0]['user_email']; 
-    $address = $_POST['address'].$_POST['city'].$_POST['state'].$_POST['zipcode'];
+    $owner_id = $petData[0]['user_email'];
+    $address = $_POST['address'] . $_POST['city'] . $_POST['state'] . $_POST['zipcode'];
     $reason_to_adopt = $_POST['reason'];
     $past_experience = $_POST['experience'];
     $home_description = $_POST['home_description'];
@@ -22,12 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $existing_children = isset($_POST['children_option']) && $_POST['children_option'] == 'yes' ? $_POST['children_count'] : 0;
     $status = 'pending'; // Assuming you have a status field and defaulting to 'pending'
 
-    var_dump($petData);
+
     // Call the new_adoption function to insert data
     $result = $Pet->new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children, $status);
-    echo $result;
     // Check the result and redirect accordingly
     if ($result) {
+        $adoptionData = $Pet->get_data_by_constraint('adoption', 'id', $_GET['adoptionId'], true);
+
+        $adopterSubject = "Pet Adoption Request";
+        $adopterMessage = "There are been an Pet Adoption Request for pet listed by you ";
+        $Mailer->smtp_mailer($owner_id, $adopterSubject, $adopterMessage);
         // Redirect to success page or any other appropriate action
         header("Location: /petmarket/browsepet");
         exit;
@@ -38,5 +44,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 
-require(ROOT. "app/controller/base.php");
-?>
+require(ROOT . "app/controller/base.php");

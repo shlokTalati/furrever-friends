@@ -192,7 +192,7 @@
 
         <div class="form-group">
             <label for="state">State:</label>
-            <input type="text" id="state" name="state" required>
+            <input type="text" id="state" name="state" value="<?php echo $_SESSION['user']['state'] ?>" readonly>
         </div>
 
         <div class="form-group">

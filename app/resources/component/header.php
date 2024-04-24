@@ -18,6 +18,7 @@
     </a>
     <a href="/petmarket/userprofile">
       <i class="fas fa-user header-icon"></i>
+      <?php echo $_SESSION['user']['name'] ?>
     </a>
 
     <!-- Notification tab -->

@@ -10,6 +10,6 @@
 
 </div>
 
-<div class="credit">&copy; All rights reserved by Jay Panchal & Team. </div>
+<div class="credit">&copy; All rights reserved by Shlok Talati & Team. </div>
 
 </footer>

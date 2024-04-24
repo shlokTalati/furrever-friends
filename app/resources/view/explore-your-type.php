@@ -1,277 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Your Type</title>
     <style>
         body {
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-            background-color: #f5f5f5;
+            position: relative;
+            /* Required for footer positioning */
             margin: 0;
             padding: 0;
-            font-size: 16px;
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-
-        label {
-            display: block;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 5px;
-            font-size: 18px;
-        }
-
-        .input-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .input-container input[type="radio"] {
-            margin-right: 10px;
-        }
-
-        .input-container label {
-            flex: 1;
-        }
-
-        input[type="radio"],
-        select,
-        textarea {
-            width: calc(100% - 24px);
-            padding: 12px;
-            margin-bottom: 15px;
-            box-sizing: border-box;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #fff;
-            font-size: 16px;
-        }
-
-        textarea {
-            height: 100px;
-        }
-
-        input[type="submit"] {
-            background-color: #ff6e01;
-            color: white;
-            padding: 14px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-            margin-top: 15px;
-            width: 100%;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-        }
-
-        input[type="submit"]:hover {
-            background-color: #e55e00;
-        }
-
-        .result {
-            text-align: center;
-            margin-top: 20px;
-            display: none;
-        }
-
-        .result p {
-            font-weight: bold;
-            color: #333;
-            font-size: 18px;
+            background-image: url('/petmarket/app/resources/img/bg2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         header {
-            background-color: #ff6e01;
-            color: #ffffff;
-            padding: 10px;
+            background-color: rgba(255, 110, 1, 0.8);
+            /* Adjust the alpha value (0.8 in this case) to control transparency */
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            animation: fadeIn 1s ease-out;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
+        .main-text {
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
 
-            to {
-                opacity: 1;
-            }
+        .main-text h2 {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .main-text p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .quiz-section {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .quiz-section button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .info-section {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .pet-info h3 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .pet-info p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .modal {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%;
+            /* Full width */
+            height: 100%;
+            /* Full height */
+            overflow: auto;
+            /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4);
+            /* Black w/ opacity */
+        }
+
+
+
+        .modal-content {
+            background-color: #FFD580;
+            margin: 15% auto;
+            /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 30%;
+            /* Decreased width */
+            text-align: center;
+            /* Align contents to center */
+        }
+
+        .modal-content p,
+        .modal-content input[type="radio"] {
+            display: inline-block;
+            /* Display questions and radio buttons in one line */
+            vertical-align: middle;
+            /* Align vertically in the middle */
+            margin: 10px 0;
+            /* Add spacing between questions */
+            text-align: left;
+            /* Align text to the left */
+            width: 100%;
+            /* Make sure each question takes full width */
+        }
+
+        .modal-content p {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .modal-content input[type="radio"] {
+            display: inline-block;
+            /* Display radio buttons in one line */
+            margin-right: 20px;
+            /* Add space between radio buttons */
+            vertical-align: middle;
+            /* Align vertically in the middle */
+        }
+
+
+
+
+        /* Adjust font size and spacing for better readability */
+        .modal-content p {
+            background-color: #FFA07A;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .modal-content input[type="radio"] {
+            margin-right: 10px;
+        }
+
+        .modal-content h2 {
+            background-color: #FFA07A;
+            /* Add background color */
+            padding: 10px;
+            /* Add padding for better appearance */
+        }
+
+        .modal-content input[type="text"] {
+            color: #333;
+            /* Match the text color of the page */
+            background-color: #fefefe;
+            /* Match the background color of the modal content */
+            border: 1px solid #ccc;
+            /* Add border for contrast */
+            padding: 8px;
+            /* Add padding for spacing */
+            border-radius: 5px;
+            /* Add border radius for rounded corners */
+            width: 50%;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        h2 {
+            font-size: 60px;
+        }
+
+        #submit-quiz {
+            padding: 10px 20px;
+            background-color: #ff6e01;
+            /* Orange color */
+            color: #fff;
+            /* White text color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            transition: background-color 0.3s ease;
+            /* Smooth color transition */
+        }
+
+        #submit-quiz:hover {
+            background-color: #ff9933;
+            /* Lighter orange color on hover */
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .fade-in.active {
+            opacity: 1;
+        }
+
+        .pet-info {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        .pet-info.visible {
+            opacity: 1;
         }
     </style>
+</head>
 
-    <div class="container">
-        <header>
-            <h1>Pet Preference Questionnaire</h1>
-        </header>
-        <form id="petForm">
+<body>
+    <header>
+        <h1>Explore Your Type</h1>
+    </header>
+    <section class="main-text">
+        <h2>DISCOVER YOUR WHAT TYPE OF ANIMAL SUITS YOU</h2>
+        <p>The Original and Most Reliablity Test on the Web</p>
+        <p>Take the simple 15 Question Quiz and Answer the questions and find out what type of pet suits you!!</p>
+    </section>
+    <section class="quiz-section">
+        <button id="quiz-btn">Take Quiz</button>
+    </section>
+    <section class="info-section fade-in">
+        <h2>About Pets</h2>
+        <div class="pet-info">
+            <h3>Dogs</h3>
+            <p>Dogs are loyal, friendly, and great for companionship. They are often called "man's best friend" for a reason. They love to play, go for walks, and spend time with their owners. Dogs come in various breeds, sizes, and temperaments, so there's likely one that fits your lifestyle perfectly.</p>
+        </div>
+        <div class="pet-info">
+            <h3>Cats</h3>
+            <p>Cats are independent and low-maintenance pets. They are known for their playful and curious nature. Cats can be affectionate companions but also enjoy spending time alone. They are perfect for people who have a busy lifestyle but still want the joy of having a pet.</p>
+        </div>
+        <div class="pet-info">
+            <h3>Fish</h3>
+            <p>Fish are calming and beautiful creatures that can add tranquility to any space with an aquarium. They require minimal care compared to other pets and can be an excellent option for those who don't have a lot of time to dedicate to pet care. Watching fish swim can also be therapeutic and relaxing.</p>
+        </div>
+        <div class="pet-info">
+            <h3>Horses</h3>
+            <p>Horses are majestic animals known for their grace and strength. They have been companions to humans for centuries, used for riding, racing, and working. Horses require dedicated care and space, but for those who love them, they offer a deep connection and rewarding relationship.</p>
+        </div>
 
-            <div class="question">
-                <label for="size">1. What size of pet are you interested in?</label>
-                <div class="radio-options">
-                    <input type="radio" id="sizeSmall" name="size" value="small"> <label for="sizeSmall">Small</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="sizeMedium" name="size" value="medium"> <label for="sizeMedium">Medium</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="sizeLarge" name="size" value="large"> <label for="sizeLarge">Large</label>
-                </div>
-            </div>
 
-            <div class="question">
-                <label for="attention">2. Do you prefer pets that require a lot of attention and interaction?</label>
-                <div class="radio-options">
-                    <input type="radio" id="attentionYes" name="attention" value="yes"> <label for="attentionYes">Yes</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="attentionNo" name="attention" value="no"> <label for="attentionNo">No</label>
-                </div>
-            </div>
 
-            <div class="question">
-                <label for="space">3. How much space do you have for a pet?</label>
-                <select id="space" name="space">
-                    <option value="small">Small (Apartment/Condo)</option>
-                    <option value="medium">Medium (House with yard)</option>
-                    <option value="large">Large (Farm/Large Property)</option>
-                </select>
-            </div>
 
-            <div class="question">
-                <label for="activity">4. What is your activity level?</label>
-                <div class="radio-options">
-                    <input type="radio" id="activityLow" name="activity" value="low"> <label for="activityLow">Low</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="activityMedium" name="activity" value="medium"> <label for="activityMedium">Medium</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="activityHigh" name="activity" value="high"> <label for="activityHigh">High</label>
-                </div>
-            </div>
+    </section>
 
-            <div class="question">
-                <label for="preferences">5. Do you have any specific preferences or restrictions?</label>
-                <textarea id="preferences" name="preferences" rows="4" cols="50"></textarea>
-            </div>
 
-            <div class="question">
-                <label for="allergy">6. Are you allergic to any specific animals?</label>
-                <div class="radio-options">
-                    <input type="radio" id="allergyYes" name="allergy" value="yes"> <label for="allergyYes">Yes</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="allergyNo" name="allergy" value="no"> <label for="allergyNo">No</label>
-                </div>
-            </div>
+    <!-- Modal -->
+    <div id="quiz-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <!-- Add quiz content here -->
+            <h2>Quiz</h2>
 
-            <div class="question">
-                <label for="time">7. How much time can you dedicate to pet care daily?</label>
-                <div class="radio-options">
-                    <input type="radio" id="timeLow" name="time" value="low"> <label for="timeLow">1-2 hours</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="timeMedium" name="time" value="medium"> <label for="timeMedium">2-4 hours</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="timeHigh" name="time" value="high"> <label for="timeHigh">More than 4 hours</label>
-                </div>
-            </div>
+            <p>Question 1: How much time can you dedicate to taking care of a pet?</p>
+            <input type="radio" name="time" value="1"> Less than 1 hour per day<br>
+            <input type="radio" name="time" value="2"> 1-2 hours per day<br>
+            <input type="radio" name="time" value="3"> More than 2 hours per day<br><br>
 
-            <div class="question">
-                <label for="training">8. Are you willing to train your pet?</label>
-                <div class="radio-options">
-                    <input type="radio" id="trainingYes" name="training" value="yes"> <label for="trainingYes">Yes</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="trainingNo" name="training" value="no"> <label for="trainingNo">No</label>
-                </div>
-            </div>
+            <p>Question 2: How much space do you have available for a pet?</p>
+            <input type="radio" name="space" value="small"> Small apartment or limited space<br>
+            <input type="radio" name="space" value="medium"> Moderate space with a yard<br>
+            <input type="radio" name="space" value="large"> Large house with ample outdoor space<br><br>
 
-            <div class="question">
-                <label for="otherPets">9. Do you have other pets in your household?</label>
-                <div class="radio-options">
-                    <input type="radio" id="otherPetsYes" name="otherPets" value="yes"> <label for="otherPetsYes">Yes</label>
-                </div>
-                <div class="radio-options">
-                    <input type="radio" id="otherPetsNo" name="otherPets" value="no"> <label for="otherPetsNo">No</label>
-                </div>
-            </div>
+            <p>Question 3: How active are you and your family?</p>
+            <input type="radio" name="activity" value="low"> Low activity, prefer quiet activities<br>
+            <input type="radio" name="activity" value="medium"> Moderate activity, enjoy occasional outings<br>
+            <input type="radio" name="activity" value="high"> High activity, always on the go<br><br>
 
-            <input type="submit" value="Submit">
-        </form>
-        <div class="result" id="result">
-            <p id="petResult"></p>
+            <p>Question 4: How much grooming are you willing to do for your pet?</p>
+            <input type="radio" name="grooming" value="low"> Minimal grooming<br>
+            <input type="radio" name="grooming" value="medium"> Regular grooming is fine<br>
+            <input type="radio" name="grooming" value="high"> Willing to commit to extensive grooming<br><br>
+
+            <p>Question 5: Do you have any specific preferences for a type of pet?</p>
+            <input type="text" name="preferences" placeholder="Enter preferences if any"><br><br>
+
+            <p>Question 6: Are there any allergies in your household?</p>
+            <input type="radio" name="allergies" value="yes"> Yes<br>
+            <input type="radio" name="allergies" value="no"> No<br><br>
+
+            <p>Question 7: How often are you away from home?</p>
+            <input type="radio" name="away" value="rarely"> Rarely, mostly at home<br>
+            <input type="radio" name="away" value="sometimes"> Sometimes, for work or travel<br>
+            <input type="radio" name="away" value="frequently"> Frequently, for extended periods<br><br>
+
+            <p>Question 8: Do you have children in the household?</p>
+            <input type="radio" name="children" value="yes"> Yes<br>
+            <input type="radio" name="children" value="no"> No<br><br>
+
+            <p>Question 9: Are you willing to train a pet?</p>
+            <input type="radio" name="training" value="yes"> Yes, I'm willing to train<br>
+            <input type="radio" name="training" value="no"> No, I prefer a pet that doesn't require training<br><br>
+
+            <p>Question 10: How long do you plan to keep a pet?</p>
+            <input type="radio" name="duration" value="short"> Short-term (less than 1 year)<br>
+            <input type="radio" name="duration" value="medium"> Medium-term (1-5 years)<br>
+            <input type="radio" name="duration" value="long"> Long-term (more than 5 years)<br><br>
+
+            <p>Question 11: How much noise can you tolerate in your living environment?</p>
+            <input type="radio" name="noise" value="low"> Prefer quiet surroundings<br>
+            <input type="radio" name="noise" value="medium"> Moderate noise is acceptable<br>
+            <input type="radio" name="noise" value="high"> Comfortable with loud or constant noise<br><br>
+
+            <p>Question 12: Are you willing to provide specialized care for a pet with specific needs (e.g., medical conditions, behavioral issues)?</p>
+            <input type="radio" name="specialized_care" value="yes"> Yes, I'm willing to provide specialized care<br>
+            <input type="radio" name="specialized_care" value="no"> Prefer a pet without specialized needs<br><br>
+
+            <p>Question 13: How important is it for your pet to be social and interact with other animals or people?</p>
+            <input type="radio" name="social_interaction" value="low"> Not important, prefer a more independent pet<br>
+            <input type="radio" name="social_interaction" value="medium"> Moderately important, occasional interaction is fine<br>
+            <input type="radio" name="social_interaction" value="high"> Very important, want a highly social pet<br><br>
+
+            <p>Question 14: How often do you travel?</p>
+            <input type="radio" name="travel_frequency" value="rarely"> Rarely, mostly at home<br>
+            <input type="radio" name="travel_frequency" value="occasionally"> Occasionally, for short trips<br>
+            <input type="radio" name="travel_frequency" value="frequently"> Frequently, for extended periods<br><br>
+
+            <p>Question 15: Are you prepared for the financial responsibilities associated with pet ownership (e.g., veterinary care, food, grooming)?</p>
+            <input type="radio" name="financial_responsibilities" value="yes"> Yes, I'm prepared<br>
+            <input type="radio" name="financial_responsibilities" value="no"> Concerned about financial commitment<br><br>
+            <!-- Add more questions here -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <button id="submit-quiz">Submit</button>
         </div>
     </div>
 
     <script>
-        document.getElementById('petForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+        // Get the modal
+        var modal = document.getElementById("quiz-modal");
 
-            // Retrieve user selections
-            var size = document.querySelector('input[name="size"]:checked').value;
-            var attention = document.querySelector('input[name="attention"]:checked').value;
-            var space = document.querySelector('select[name="space"]').value;
-            var activity = document.querySelector('input[name="activity"]:checked').value;
-            var preferences = document.querySelector('textarea[name="preferences"]').value;
-            var allergy = document.querySelector('input[name="allergy"]:checked').value;
-            var time = document.querySelector('input[name="time"]:checked').value;
-            var training = document.querySelector('input[name="training"]:checked').value;
-            var otherPets = document.querySelector('input[name="otherPets"]:checked').value;
+        // Get the button that opens the modal
+        var btn = document.getElementById("quiz-btn");
 
-            // Determine pet type based on selections
-            var petType = '';
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
 
-            if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'yes' && otherPets === 'no') {
-                petType = 'Dog';
-            } else if (size === 'small' && attention === 'no' && space === 'small' && activity === 'low' && allergy === 'no' && time === 'low' && training === 'no' && otherPets === 'yes') {
-                petType = 'Cat';
-            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'high' && allergy === 'no' && time === 'medium' && training === 'yes' && otherPets === 'no') {
-                petType = 'Horse';
-            } else if (size === 'large' && attention === 'yes' && space === 'large' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'no' && otherPets === 'no') {
-                petType = 'Cow';
-            } else if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'yes' && otherPets === 'yes') {
-                petType = 'Rabbit';
-            } else if (size === 'medium' && attention === 'no' && space === 'medium' && activity === 'low' && allergy === 'yes' && time === 'high' && training === 'yes' && otherPets === 'no') {
-                petType = 'Bird';
-            } else if (size === 'large' && attention === 'yes' && space === 'large' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'yes' && otherPets === 'yes') {
-                petType = 'Goat';
-            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'low' && allergy === 'yes' && time === 'low' && training === 'no' && otherPets === 'yes') {
-                petType = 'Ferret';
-            } else if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'no' && otherPets === 'no') {
-                petType = 'Hamster';
-            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'medium' && allergy === 'no' && time === 'medium' && training === 'yes' && otherPets === 'yes') {
-                petType = 'Guinea Pig';
-            } else if (size === 'large' && attention === 'no' && space === 'large' && activity === 'high' && allergy === 'no' && time === 'high' && training === 'no' && otherPets === 'no') {
-                petType = 'Pig';
-            } else if (size === 'small' && attention === 'yes' && space === 'small' && activity === 'low' && allergy === 'no' && time === 'medium' && training === 'no' && otherPets === 'yes') {
-                petType = 'Fish';
-            } else if (size === 'medium' && attention === 'yes' && space === 'medium' && activity === 'high' && allergy === 'yes' && time === 'high' && training === 'no' && otherPets === 'no') {
-                petType = 'Snake';
-            } else if (size === 'large' && attention === 'no' && space === 'large' && activity === 'low' && allergy === 'no' && time === 'low' && training === 'no' && otherPets === 'yes') {
-                petType = 'Turtle';
-            } else {
-                petType = 'Any other pet';
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
             }
+        }
 
+        // Function to handle quiz submission
+        // Function to handle quiz submission
+        // Define an array of pet types and their corresponding criteria
+        const petOptions = [{
+                petType: "Fish",
+                criteria: {
+                    time: "1",
+                    space: "small",
+                    activity: "low",
+                    grooming: "low",
+                    allergies: "no",
+                    away: "rarely",
+                    children: "no",
+                    training: "no",
+                    duration: "long",
+                    noise: "low",
+                    specializedCare: "no",
+                    socialInteraction: "low",
+                    travelFrequency: "rarely",
+                    financialResponsibilities: "yes"
+                }
+            },
+            {
+                petType: "Dog",
+                criteria: {
+                    time: "3",
+                    space: "large",
+                    activity: "high",
+                    grooming: "high",
+                    allergies: "no",
+                    away: "sometimes",
+                    children: "yes",
+                    training: "yes",
+                    duration: "long",
+                    noise: "medium",
+                    specializedCare: "yes",
+                    socialInteraction: "high",
+                    travelFrequency: "occasionally",
+                    financialResponsibilities: "yes"
+                }
+            },
+            {
+                petType: "Cat",
+                criteria: {
+                    time: "2",
+                    space: "medium",
+                    activity: "medium",
+                    grooming: "medium",
+                    allergies: "no",
+                    away: "sometimes",
+                    children: "no",
+                    training: "yes",
+                    duration: "medium",
+                    noise: "medium",
+                    specializedCare: "no",
+                    socialInteraction: "medium",
+                    travelFrequency: "occasionally",
+                    financialResponsibilities: "yes"
+                }
+            }
+            // Add more pet options as needed
+        ];
 
-            // Display result in a decorated alert
-            document.getElementById('petResult').textContent = 'Based on your preferences, you would like to have a ' + petType + '!';
-            document.getElementById('result').style.display = 'block';
+        // Function to find a suitable pet based on provided criteria
+        function findSuitablePet(criteria) {
+            for (const option of petOptions) {
+                let isSuitable = true;
+                for (const key in option.criteria) {
+                    if (option.criteria[key] !== criteria[key]) {
+                        isSuitable = false;
+                        break;
+                    }
+                }
+                if (isSuitable) {
+                    return option.petType;
+                }
+            }
+            return "No specific recommendation based on provided answers.";
+        }
+
+        // Event listener for the submit button
+        document.getElementById("submit-quiz").addEventListener("click", function() {
+            // Get all the selected radio button values
+            const criteria = {};
+            const radioButtons = document.querySelectorAll('input[type="radio"]');
+            radioButtons.forEach(button => {
+                criteria[button.name] = button.value;
+            });
+
+            // Find a suitable pet based on user's criteria
+            const suitablePet = findSuitablePet(criteria);
+
+            // Display the result
+            alert("Based on your answers, a suitable pet for you is: " + suitablePet);
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            window.addEventListener("scroll", function() {
+                var aboutPetsSection = document.querySelector(".info-section");
+                if (isInViewport(aboutPetsSection)) {
+                    aboutPetsSection.classList.add("active");
+                    // Add visible class to pet-info sections
+                    var petInfoSections = document.querySelectorAll(".pet-info");
+                    petInfoSections.forEach(function(section) {
+                        section.classList.add("visible");
+                    });
+                } else {
+                    aboutPetsSection.classList.remove("active");
+                    // Remove visible class from pet-info sections
+                    var petInfoSections = document.querySelectorAll(".pet-info");
+                    petInfoSections.forEach(function(section) {
+                        section.classList.remove("visible");
+                    });
+                }
+            });
+        });
+
+        function isInViewport(element) {
+            var rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        }
     </script>
+</body>
+
+</html>
