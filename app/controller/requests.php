@@ -29,7 +29,7 @@ if (isset($_GET['adoptionId'])) {
             // Send email to adopter
             $adopterSubject = "Adoption Request Approved";
             $adopterMessage = "Your adoption request has been approved.Thank You for using our Website";
-            $Mailer->smtp_mailer($adoptionData[0]['adopter_id'], $adopterSubject, $messaadopterMessagege);
+            $Mailer->smtp_mailer($adoptionData[0]['adopter_id'], $adopterSubject, $adopterMessage);
 
 
             // Send email to owner
