@@ -136,11 +136,12 @@ class Pet extends Base
 
     public function new_adoption($adopter_id, $pet_id, $owner_id, $address, $reason_to_adopt, $past_experience, $home_description, $existing_pets, $existing_children,$status){
 
-        $sql = "INSERT INTO adoption (adopter_id, pet_id, owner_id, address, reason_to_adopt, past_experience, home_description, existing_pets, existing_children) VALUES ('$adopter_id', $pet_id, '$owner_id', '$address', '$reason_to_adopt', '$past_experience', '$home_description', $existing_pets, $existing_children,'pending')";
+        $sql = "INSERT INTO adoption (adopter_id, pet_id, owner_id, address, reason_to_adopt, past_experience, home_description, existing_pets, existing_children,status) VALUES ('$adopter_id', $pet_id, '$owner_id', '$address', '$reason_to_adopt', '$past_experience', '$home_description', $existing_pets, $existing_children,'$status')";
 
         // Execute the query
+       
         $result = mysqli_query($this->connection, $sql);
-
+        
         // Check if the query was successful
         if ($result) {
             return 1;
