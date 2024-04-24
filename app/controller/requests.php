@@ -25,7 +25,7 @@ if (isset($_GET['adoptionId'])) {
         $result = $Pet->approve_adoption($_GET['adoptionId'], $_GET['petId'], $_SESSION['user']['email']);
         if ($result == 1) {
 
-
+            echo "<script> alert('Email Sent,Thank you for using our platform') </script>";
             // Send email to adopter
             $adopterSubject = "Adoption Request Approved";
             $adopterMessage = "Your adoption request has been approved.Thank You for using our Website";
@@ -46,7 +46,7 @@ if (isset($_GET['adoptionId'])) {
         $result = $Pet->reject_adoption($_GET['adoptionId'], $_GET['petId'], $_SESSION['user']['email']);
 
         if($result == 1){
-
+            echo "<script> alert('Email Sent,Thank you for using our platform') </script>";
             $adopterSubject = "Adoption Request Rejected";
             $adopterMessage = "Your adoption request has been Rejected.";
             $Mailer->smtp_mailer($adoptionData[0]['$adopter_id'], $adopterSubject, $adopterMessage);

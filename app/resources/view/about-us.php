@@ -1,9 +1,14 @@
 <style>
         body {
-            font-family: Arial, sans-serif;
+            position: relative;
+            /* Required for footer positioning */
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
+            background-image: url('/petmarket/app/resources/img/bga.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
         }
         header {
             background-color: #ff6e01;

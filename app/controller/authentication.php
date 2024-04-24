@@ -22,7 +22,7 @@ if(isset($_POST['loginEmail']) && isset($_POST['loginPassword'])){
 // Signup
 // Signup
 if(isset($_POST['signupEmail'])){
-    $signup_result = $User->signup($_POST['signupName'], $_POST['signupEmail'], $_POST['signupPassword'], $_POST['signupPhone'], $_POST['signupDob'], $_POST['signupCity']);
+    $signup_result = $User->signup($_POST['signupName'], $_POST['signupEmail'], $_POST['signupPassword'], $_POST['signupPhone'], $_POST['signupDob'],$_POST['signupState'], $_POST['signupCity']);
     if($signup_result == true){
         echo "<script> alert('Signup Successful!'); </script>";
     }
