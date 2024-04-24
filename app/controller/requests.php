@@ -1,44 +1,13 @@
 
 <?php
 require(ROOT . "/app/model/Pet.php");
+require(ROOT . "/app/model/User.php");
+require(ROOT . "/app/model/Mailer.php");
+
 $Pet = new Pet();
+$User = new User();
+$Mailer = new Mailer();
 ?>
-
-
-<?php
-//sending mail to user phpMailer
-include('smtp/PHPMailerAutoload.php');
-
-function smtp_mailer($to,$subject, $msg){
-	$mail = new PHPMailer(); 
-	$mail->IsSMTP(); 
-	$mail->SMTPAuth = true; 
-	$mail->SMTPSecure = 'tls'; 
-	$mail->Host = "smtp.gmail.com";
-	$mail->Port = 587; 
-	$mail->IsHTML(true);
-	$mail->CharSet = 'UTF-8';
-	//$mail->SMTPDebug = 2; 
-	$mail->Username = "fureverfriendorg@gmail.com";
-	$mail->Password = "uimyqydhwddmixfe";
-	$mail->SetFrom("fureverfriendorg@gmail.com");
-	$mail->Subject = $subject;
-	$mail->Body =$msg;
-	$mail->AddAddress($to);
-	$mail->SMTPOptions=array('ssl'=>array(
-		'verify_peer'=>false,
-		'verify_peer_name'=>false,
-		'allow_self_signed'=>false
-	));
-	if(!$mail->Send()){
-		echo $mail->ErrorInfo;
-	}else{
-		return 'Sent';
-	}
-}
-?>
-
-
 
 <?php
 //LOGIC TO APPROVE AND REJECT REQUESTS
@@ -60,13 +29,13 @@ if (isset($_GET['adoptionId'])) {
             // Send email to adopter
             $adopterSubject = "Adoption Request Approved";
             $adopterMessage = "Your adoption request has been approved.Thank You for using our Website";
-            smtp_mailer($adoptionData[0]['adopter_id'], $adopterSubject, $messaadopterMessagege);
+            $Mailer->smtp_mailer($adoptionData[0]['adopter_id'], $adopterSubject, $messaadopterMessagege);
 
 
             // Send email to owner
             $ownerSubject = "Pet Adopted";
             $ownerMessage = "Congratulations The Pet Listed By you has been Adopted!!!";
-            smtp_mailer($ownerEmail, $ownerSubject, $ownerMessage);
+            $Mailer->smtp_mailer($ownerEmail, $ownerSubject, $ownerMessage);
         }
     }
 
@@ -80,7 +49,7 @@ if (isset($_GET['adoptionId'])) {
 
             $adopterSubject = "Adoption Request Rejected";
             $adopterMessage = "Your adoption request has been Rejected.";
-            smtp_mailer($adoptionData[0]['$adopter_id'], $adopterSubject, $adopterMessage);
+            $Mailer->smtp_mailer($adoptionData[0]['$adopter_id'], $adopterSubject, $adopterMessage);
         }
         
     } else {
