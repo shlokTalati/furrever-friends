@@ -163,7 +163,7 @@
 <div class="container">
     <h2>Pet Adoption Form</h2>
     <form action="adopt" method="post">
-        <input type="hidden" name="pet_id" value="<?php echo $petId; ?>">
+        <input type="hidden" name="pet_id" value="<?php echo $_GET['id']; ?>">
 
         <div class="form-group">
             <label for="name">Your Name:</label>
@@ -197,7 +197,7 @@
 
         <div class="form-group">
             <label for="zip">ZIP Code:</label>
-            <input type="text" id="zip" name="zip" required>
+            <input type="text" id="zip" name="zipcode" required>
         </div>
 
         <div class="form-group">
