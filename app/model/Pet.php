@@ -206,6 +206,19 @@ class Pet extends Base
         }
     }
 
+    public function delete_pet($pet_id){
+        $sql = "DELETE FROM listed_pet WHERE id = $pet_id";
 
+        // Execute the query
+        $result = mysqli_query($this->connection, $sql);
+
+        // Check if the query was successful
+        if ($result) {
+            return 1;
+        } else {
+            echo "Error: " . mysqli_error($this->connection);
+            return 0;
+        }
+    }
 
 }

@@ -80,7 +80,7 @@
                 <img src="/petmarket/app/resources/img/gall-1.png" alt="">
                 <div class="content">
                     <h3> Dog </h3>
-                    <a href="https://www.wikihow.com/Care-for-Dogs" class="btn"> Learn  </a>
+                    <a href="https://www.wikihow.com/Care-for-Dogs" class="btn" target="_blank"> Learn  </a>
                 </div>
             </div>
 
@@ -88,7 +88,7 @@
                 <img src="/petmarket/app/resources/img/gall-2.jpg" alt="">
                 <div class="content">
                     <h3> Cats </h3>
-                    <a href=https://www.wikihow.com/Take-Care-of-a-Cat" class="btn"> Learn </a>
+                    <a href=https://www.wikihow.com/Take-Care-of-a-Cat" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
 
@@ -96,7 +96,7 @@
                 <img src="/petmarket/app/resources/img/cow.jpg" alt="">
                 <div class="content">
                     <h3> Cows </h3>
-                    <a href="https://www.wikihow.com/Care-for-Cattle" class="btn"> Learn </a>
+                    <a href="https://www.wikihow.com/Care-for-Cattle" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
 
@@ -104,21 +104,21 @@
                 <img src="/petmarket/app/resources/img/h1.jpeg" alt="">
                 <div class="content">
                     <h3> Horses </h3>
-                    <a href="https://www.wikihow.com/Take-Care-of-Your-Horse" class="btn"> Learn </a>
+                    <a href="https://www.wikihow.com/Take-Care-of-Your-Horse" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
             <div class="box">
                 <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
                 <div class="content">
                     <h3> Birds </h3>
-                    <a href="https://www.wikihow.com/Care-for-a-Bird" class="btn"> Learn </a>
+                    <a href="https://www.wikihow.com/Care-for-a-Bird" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
             <div class="box">
                 <img src="/petmarket/app/resources/img/reptiles.png" alt="">
                 <div class="content">
                     <h3> Reptiles </h3>
-                    <a href="https://www.wikihow.com/Category:Reptiles" class="btn"> Learn </a>
+                    <a href="https://www.wikihow.com/Category:Reptiles" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
             

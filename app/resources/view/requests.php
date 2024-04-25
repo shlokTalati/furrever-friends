@@ -77,10 +77,10 @@
         <div class="notification-header">Adoption Request</div>
         <div class="notification-message">
             <p><strong><?php echo $data['adopter_id'] ?></strong> wants to adopt <strong><?php echo $data['pet_name'] ?></strong> listed by you.</p>
-            <p>Do you want to approve their adoption request?</p>
+            <p>Do you want to approve their adoption request?</p><br>
+            <p>You can view more details about the adopter in the mail sent to you</p>
         </div>
         <div class="buttons">
-            <button class="button view" onclick="viewRequest()">View</button>
             
             <a href="/petmarket/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Approve">
             <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
@@ -95,10 +95,3 @@
     <?php endforeach;
     }
     ?>
-   
-    
-
-    <!-- Other notifications can go here -->
-
-
-

@@ -18,7 +18,8 @@ $appUrl = array(
     "/petdetails"=> "pet-details.php",
     "/wishlist"=> "wishlist.php",
     "/adopt"=> "adopt.php",
-    "/requests" => "requests.php"
+    "/requests" => "requests.php",
+    "/processing"=>"processing.php"
     
 );
 

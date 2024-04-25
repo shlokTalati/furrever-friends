@@ -14,8 +14,14 @@ $Mailer = new Mailer();
 if (isset($_GET['adoptionId'])) {
 
 
-    // Get adopter's email
+    // Get Adoption Data
     $adoptionData = $Pet->get_data_by_constraint('adoption', 'id', $_GET['adoptionId'], true);
+
+    //Get Adopter Data
+    $adopterData = $Pet->get_data_by_constraint('user', 'email', $adoptionData[0]['adopter_id'], true);
+
+    $petData = $Pet->get_data_by_constraint('listed_pet', 'id', $adoptionData[0]['pet_id'], true);
+
     // Get Owner's email
     $ownerEmail = $_SESSION['user']['email'];
     
@@ -28,13 +34,21 @@ if (isset($_GET['adoptionId'])) {
             echo "<script> alert('Email Sent,Thank you for using our platform') </script>";
             // Send email to adopter
             $adopterSubject = "Adoption Request Approved";
-            $adopterMessage = "Your adoption request has been approved.Thank You for using our Website";
+            $adopterMessage = "Your adoption request for the following pet has been approved. <br><br>
+            
+            Pet Details:<br>
+            Name:  {$petData[0]['name']} <br>
+            Gender: {$petData[0]['gender']}<br>
+            Age: {$petData[0]['age']}<br>
+            Previous Owner Email: $ownerEmail<br><br>            
+            
+            Thank You for using our Website";
             $Mailer->smtp_mailer($adoptionData[0]['adopter_id'], $adopterSubject, $adopterMessage);
 
 
             // Send email to owner
-            $ownerSubject = "Pet Adopted";
-            $ownerMessage = "Congratulations The Pet Listed By you has been Adopted!!!";
+            $ownerSubject = "Your Pet is Adopted";
+            $ownerMessage = "Congratulations Your Pet {$petData[0]['name']} has been Adopted by {$adopterData[0]['name']}!!!";
             $Mailer->smtp_mailer($ownerEmail, $ownerSubject, $ownerMessage);
         }
     }

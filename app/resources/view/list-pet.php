@@ -121,9 +121,10 @@
     }
 </style>
 
-<h1>Pet Listing Form</h1>
 
 <form action="/petmarket/listpet" enctype="multipart/form-data" method="post">
+    <h1 style="text-align:center;">Pet Listing Form</h1>
+    <br><br>
 
     <label for="user_email">User Email:</label>
     <input type="email" id="user_email" name="user_email" value="<?php echo $_SESSION['user']['email']; ?>" readonly>

@@ -1,7 +1,6 @@
 <style>
         body {
             position: relative;
-            /* Required for footer positioning */
             margin: 0;
             padding: 0;
             background-image: url('/petmarket/app/resources/img/bga.jpg');

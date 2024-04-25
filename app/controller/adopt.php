@@ -16,7 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $pet_id = $_POST['pet_id'];
     // Assuming you have a way to retrieve owner_id
     $owner_id = $petData[0]['user_email'];
-    $address = $_POST['address'] . $_POST['city'] . $_POST['state'] . $_POST['zipcode'];
+
+    $adopterData = $Pet->get_data_by_constraint('user', 'email', $adopter_id, true);
+    $address = $_POST['address'] . ", " . $_POST['city']. ", " . $_POST['state']. ", " . $_POST['zipcode'];
     $reason_to_adopt = $_POST['reason'];
     $past_experience = $_POST['experience'];
     $home_description = $_POST['home_description'];
@@ -31,8 +33,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result) {
         $adoptionData = $Pet->get_data_by_constraint('adoption', 'id', $_GET['adoptionId'], true);
 
+        // Send email to owner
         $adopterSubject = "Pet Adoption Request";
-        $adopterMessage = "There are been an Pet Adoption Request for pet listed by you ";
+        $adopterMessage = "There has been a Pet Adoption Request for the pet ({$petData[0]['name']}) listed by you.<br><br>"
+        . "ADOPTION DETAILS:<br>"
+        . "Pet Details: {$petData[0]['name']}<br>"
+        . "Adopter Name: {$adopterData[0]['name']}<br>"
+        . "Adopter Phone: {$adopterData[0]['phone']}<br>"
+        . "Adopter Email: {$adopter_id}<br>"
+        . "Reason to Adopt: {$reason_to_adopt}<br>"
+        . "Past Experience: {$past_experience}<br>"
+        . "Address: {$address}<br>";
         $Mailer->smtp_mailer($owner_id, $adopterSubject, $adopterMessage);
         // Redirect to success page or any other appropriate action
         header("Location: /petmarket/browsepet");

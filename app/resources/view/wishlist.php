@@ -59,6 +59,7 @@
   }
   else{
     foreach ($wishlistData as $data):
+      if($data['availability'] != 0){
 ?>
 
   <a href="petdetails?id=<?php echo $data['id']; ?>">
@@ -66,11 +67,12 @@
   <div class="wishlist-item">
     <img src="<?php echo $data['photo_path'] ?>" alt="Pet Image">
     <div class="name"><?php echo $data['name'] ?></div>
-    <div class="description"><?php echo $data['extra_info'] ?></div>
+    <div class="description">Age: <?php echo $data['age'] ?></div>
+    <div class="description"><?php echo $data['gender'] ?></div>
   </div>
   </a>
 
-<?php endforeach; }?>
+<?php } endforeach; }?>
 
 
 
