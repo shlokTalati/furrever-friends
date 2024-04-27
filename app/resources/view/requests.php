@@ -82,11 +82,11 @@
         </div>
         <div class="buttons">
             
-            <a href="/petmarket/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Approve">
+            <a href="/furreverfriends/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Approve">
             <button class="button approve" onclick="approveRequest()"><span class="icon">&#10004;</span> Approve</button>
             </a>
 
-            <a href="/petmarket/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Reject">
+            <a href="/furreverfriends/requests?adoptionId=<?php echo $data['id']; ?>&petId=<?php echo $data['pet_id'] ?>&action=Reject">
             <button class="button reject" onclick="rejectRequest()"><span class="icon">&#10006;</span> Reject</button>
             </a>
         </div>

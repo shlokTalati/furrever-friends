@@ -9,7 +9,7 @@ if(isset($_POST['loginEmail']) && isset($_POST['loginPassword'])){
     if($login_result != null && !is_string($login_result)){
         $_SESSION['loggedInStatus'] = true;
         $_SESSION['user'] = $login_result;
-        header("Location: /petmarket/home");
+        header("Location: /furreverfriends/home");
     } else {
         if ($login_result === "email_not_found") {
             echo "<script>alert('Email not found! Please enter a valid email.');</script>";
@@ -38,7 +38,7 @@ if(isset($_GET['logout']) && $_GET['logout'] == true){
     $_SESSION['loggedInStatus'] = false;
     $_SESSION['user'] = null;
     session_destroy();
-    header("Location: /petmarket/authentication");
+    header("Location: /furreverfriends/authentication");
 }
 
 ?>

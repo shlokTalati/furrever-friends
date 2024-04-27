@@ -3,7 +3,7 @@
             position: relative;
             margin: 0;
             padding: 0;
-            background-image: url('/petmarket/app/resources/img/bga.jpg');
+            background-image: url('/furreverfriends/app/resources/img/bga.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -74,7 +74,7 @@
         <p>If you have any questions about our adoption process, the animals available for adoption, or if you're interested in volunteering, please don't hesitate to reach out to us.</p> <br>
         <!-- <p>Email: info@petadoption.com<br>Phone: 123-456-7890</p> -->
         <h2>Email: </h2> 
-        <p><a href="mailto:info@furrEverFriends.com" style="color:black"> info@FurrEverFriends.com </a> </p> <br> 
+        <p><a href="mailto:info@furreverfriends.com" style="color:black"> info@furreverfriends.com </a> </p> <br> 
         <h2> Phone: </h2> 
         <p> (+91) 78748 45813 </p>
     </div>

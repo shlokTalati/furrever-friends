@@ -8,13 +8,13 @@ if(isset($_GET['deletepetid'])){
     $result = $Pet->delete_pet($_GET['deletepetid']);
 
     if($result == 1){
-        header("Location: /petmarket/userprofile");
+        header("Location: /furreverfriends/userprofile");
     } else {
-        header("Location: /petmarket/home");
+        header("Location: /furreverfriends/home");
     }
 }
 else{
-    header("Location: /petmarket/home");
+    header("Location: /furreverfriends/home");
 }
 
 

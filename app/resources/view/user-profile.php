@@ -91,7 +91,7 @@
                         <p class="pet-details"><strong>Age:</strong> <?php echo ($pet['age']); ?></p>
                         <p class="pet-details"><strong>Nature:</strong> <?php echo ucfirst($pet['nature']); ?></p>
                         <p class="pet-details"><strong>Food Preferance:</strong> <?php echo ucfirst($pet['food_preference']); ?></p>
-                        <p class="pet-details"><a href="/petmarket/processing?deletepetid=<?php echo $pet['id'] ?>">Delete</a></p>
+                        <p class="pet-details"><a href="/furreverfriends/processing?deletepetid=<?php echo $pet['id'] ?>">Delete</a></p>
                         
                     </div>
                 <?php endforeach;

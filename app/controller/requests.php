@@ -67,15 +67,15 @@ if (isset($_GET['adoptionId'])) {
         }
         
     } else {
-        header("Location: /petmarket/requests");
+        header("Location: /furreverfriends/requests");
     }
 
 
     // Redirect after processing
     if ($result == 1) {
-        header("Location: /petmarket/requests?success=true");
+        header("Location: /furreverfriends/requests?success=true");
     } else {
-        header("Location: /petmarket/requests?success=false");
+        header("Location: /furreverfriends/requests?success=false");
     }
 }
 

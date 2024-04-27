@@ -191,7 +191,7 @@ section{
   min-height: 100vh;
   display: flex;
   align-items: center;
-  background: url(/petmarket/app/resources/img/home_img_allpets.jpg) no-repeat;
+  background: url(/furreverfriends/app/resources/img/home_img_allpets.jpg) no-repeat;
   background-size:contain;
   background-position: right;
 }
@@ -343,7 +343,7 @@ section{
 
 /* banner */
 .banner{
-  background: url(/petmarket/app/resources/img/banner.png) no-repeat;
+  background: url(/furreverfriends/app/resources/img/banner.png) no-repeat;
 }
 
 .banner .row{
@@ -381,7 +381,7 @@ section{
 
 /* footer */
 .footer{
-  background: url(/petmarket/app/resources/img/footer.jpg) no-repeat;
+  background: url(/furreverfriends/app/resources/img/footer.jpg) no-repeat;
   background-size: cover;
   padding: 3rem 7%;
   margin-top: auto;
@@ -498,7 +498,7 @@ section{
   margin-bottom: 4rem;
   border-radius: 5px;
   background-color: #f9f9f9;
-  background: url(/petmarket/app/resources/img/adopt_me_userprofile.jpg) no-repeat;
+  background: url(/furreverfriends/app/resources/img/adopt_me_userprofile.jpg) no-repeat;
   background-size: 40%; 
 }
 

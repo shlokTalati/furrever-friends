@@ -4,9 +4,9 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FurEver Friends</title>
+    <title>FurrEver Friends</title>
     <!-- Link to your external CSS file for the color scheme -->
-    <link rel="stylesheet" href="/petmarket/app/resources/css/style.css">
+    <link rel="stylesheet" href="/furreverfriends/app/resources/css/style.css">
     <style>
       body {
         display: flex;
@@ -84,7 +84,7 @@
         <div class="container">
           <h1>Login</h1>
           <br>
-          <form action="/petmarket/authentication" method="post">
+          <form action="/furreverfriends/authentication" method="post">
             <div class="form-group">
               <input type="email" class="form-control" id="loginEmail" placeholder="Enter email" name="loginEmail" required>
             </div>
@@ -101,7 +101,7 @@
         <div class="container">
           <h1>Sign Up</h1>
           <br>
-          <form action="/petmarket/authentication" method="post" onsubmit="return validateSignupForm()">
+          <form action="/furreverfriends/authentication" method="post" onsubmit="return validateSignupForm()">
             <div class="form-group">
               <input type="text" class="form-control" id="signupName" placeholder="Name" name="signupName" required>
             </div>

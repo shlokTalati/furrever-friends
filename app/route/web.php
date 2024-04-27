@@ -24,10 +24,10 @@ $appUrl = array(
 );
 
 if($request_uri_path != "/authentication" && $_SESSION['loggedInStatus'] == false){
-    header("Location: /petmarket/authentication");
+    header("Location: /furreverfriends/authentication");
 }
 else if($request_uri_path == "/authentication" && $_SESSION['loggedInStatus'] == true){
-    header("Location: /petmarket/home");
+    header("Location: /furreverfriends/home");
 }
 
 if($request_uri_path == '/authentication'){

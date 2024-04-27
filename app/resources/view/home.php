@@ -2,7 +2,7 @@
     <section class="home" id="home">
 
         <div class="content">
-           <a href="/petmarket/browsepet"> <h3><b> Don't Buy, Adopt </b></h3> </a>
+           <a href="/furreverfriends/browsepet"> <h3><b> Don't Buy, Adopt </b></h3> </a>
             <h4> Now Choose And Adopt <br> Your Best Buddy. </h4>
         </div>
 
@@ -11,12 +11,12 @@
     <!-- about -->
     <section class="about" id="about">
 
-      <a href="/petmarket/aboutus">  <h3 class="deco-title"> About us </h3> </a>
+      <a href="/furreverfriends/aboutus">  <h3 class="deco-title"> About us </h3> </a>
 
         <div class="box-container">
 
             <div class="image">
-                <img src="/petmarket/app/resources/img/about.png" alt="">
+                <img src="/furreverfriends/app/resources/img/about.png" alt="">
             </div>
 
             <div class="content">
@@ -39,25 +39,25 @@
 
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="/petmarket/app/resources/img/gall-1.png" alt="">
+                        <img src="/furreverfriends/app/resources/img/gall-1.png" alt="">
                     </div>
                 </div>
 
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="/petmarket/app/resources/img/gall-2.jpg" alt="">
+                        <img src="/furreverfriends/app/resources/img/gall-2.jpg" alt="">
                     </div>
                 </div>
 
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
+                        <img src="/furreverfriends/app/resources/img/gall-3.jpeg" alt="">
                     </div>
                 </div>
 
                 <div class="swiper-slide slide">
                     <div class="image">
-                        <img src="/petmarket/app/resources/img/gall-4.jpg" alt="">
+                        <img src="/furreverfriends/app/resources/img/gall-4.jpg" alt="">
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@
         <div class="box-container">
 
             <div class="box">
-                <img src="/petmarket/app/resources/img/gall-1.png" alt="">
+                <img src="/furreverfriends/app/resources/img/gall-1.png" alt="">
                 <div class="content">
                     <h3> Dog </h3>
                     <a href="https://www.wikihow.com/Care-for-Dogs" class="btn" target="_blank"> Learn  </a>
@@ -85,7 +85,7 @@
             </div>
 
             <div class="box">
-                <img src="/petmarket/app/resources/img/gall-2.jpg" alt="">
+                <img src="/furreverfriends/app/resources/img/gall-2.jpg" alt="">
                 <div class="content">
                     <h3> Cats </h3>
                     <a href=https://www.wikihow.com/Take-Care-of-a-Cat" class="btn" target="_blank"> Learn </a>
@@ -93,7 +93,7 @@
             </div>
 
             <div class="box">
-                <img src="/petmarket/app/resources/img/cow.jpg" alt="">
+                <img src="/furreverfriends/app/resources/img/cow.jpg" alt="">
                 <div class="content">
                     <h3> Cows </h3>
                     <a href="https://www.wikihow.com/Care-for-Cattle" class="btn" target="_blank"> Learn </a>
@@ -101,21 +101,21 @@
             </div>
 
             <div class="box">
-                <img src="/petmarket/app/resources/img/h1.jpeg" alt="">
+                <img src="/furreverfriends/app/resources/img/h1.jpeg" alt="">
                 <div class="content">
                     <h3> Horses </h3>
                     <a href="https://www.wikihow.com/Take-Care-of-Your-Horse" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
             <div class="box">
-                <img src="/petmarket/app/resources/img/gall-3.jpeg" alt="">
+                <img src="/furreverfriends/app/resources/img/gall-3.jpeg" alt="">
                 <div class="content">
                     <h3> Birds </h3>
                     <a href="https://www.wikihow.com/Care-for-a-Bird" class="btn" target="_blank"> Learn </a>
                 </div>
             </div>
             <div class="box">
-                <img src="/petmarket/app/resources/img/reptiles.png" alt="">
+                <img src="/furreverfriends/app/resources/img/reptiles.png" alt="">
                 <div class="content">
                     <h3> Reptiles </h3>
                     <a href="https://www.wikihow.com/Category:Reptiles" class="btn" target="_blank"> Learn </a>
@@ -136,7 +136,7 @@
             </div>
 
             <div class="image">
-                <img src="/petmarket/app/resources/img/banner_1.png" alt="">
+                <img src="/furreverfriends/app/resources/img/banner_1.png" alt="">
             </div>
             
         </div>

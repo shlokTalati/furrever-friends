@@ -9,7 +9,7 @@ if (isset($_GET['id'])) {
     $wishlistResult = $Pet->add_to_wishlist($_SESSION['user']['email'], $petId);
     
     if ($wishlistResult == 1) {
-        header("Location: /petmarket/wishlist");
+        header("Location: /furreverfriends/wishlist");
     } else {
         echo "<script> alert('Failed to add pet to wishlist!'); </script>";
     }

@@ -11,7 +11,7 @@
             /* Required for footer positioning */
             margin: 0;
             padding: 0;
-            background-image: url('/petmarket/app/resources/img/bg2.jpg');
+            background-image: url('/furreverfriends/app/resources/img/bg2.jpg');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;

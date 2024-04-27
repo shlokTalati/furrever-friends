@@ -81,7 +81,7 @@ if ($petDetails) {
     echo "<p>Listed By: <a href='mailto:{$petDetails['user_email']}'>{$petDetails['user_email']}</a></p>";
     
     // Buttons
-    echo "<a href='/petmarket/adopt?id={$petDetails['id']}' class='btn'>Adopt</a>";
+    echo "<a href='/furreverfriends/adopt?id={$petDetails['id']}' class='btn'>Adopt</a>";
     echo "<a href='wishlist?id={$petDetails['id']}' class='btn'>Add to My Wishlist</a>";
 } else {
     // Handle the case when no pet details are found

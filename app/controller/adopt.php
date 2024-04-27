@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         . "Address: {$address}<br>";
         $Mailer->smtp_mailer($owner_id, $adopterSubject, $adopterMessage);
         // Redirect to success page or any other appropriate action
-        header("Location: /petmarket/browsepet");
+        header("Location: /furreverfriends/browsepet");
         exit;
     } else {
         // Handle error, maybe redirect back to form with error message

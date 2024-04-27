@@ -1,29 +1,29 @@
 <!-- <?php echo var_dump($_SESSION['user']); ?> -->
 
 <header class="header">
-  <a href="/petmarket/home" class="logo"><i class="fas fa-paw"></i> FurrEver friEnd </a>
+  <a href="/furreverfriends/home" class="logo"><i class="fas fa-paw"></i> FurrEver friEnd </a>
 
   <nav class="navbar">
-    <a href="/petmarket/home"> Home </a>
-    <a href="/petmarket/aboutus"> About Us</a>
-    <a href="/petmarket/faq"> FAQs </a>
-    <a href="/petmarket/listpet"> List a Pet </a>
-    <a href="/petmarket/exploreyourtype"> Explore Your Type </a>
-    <a href="/petmarket/browsepet"> Browse Pet</a>
+    <a href="/furreverfriends/home"> Home </a>
+    <a href="/furreverfriends/aboutus"> About Us</a>
+    <a href="/furreverfriends/faq"> FAQs </a>
+    <a href="/furreverfriends/listpet"> List a Pet </a>
+    <a href="/furreverfriends/exploreyourtype"> Explore Your Type </a>
+    <a href="/furreverfriends/browsepet"> Browse Pet</a>
   </nav>
 
   <div class="icons">
-    <a class="text-decoration-none" href="/petmarket/authentication?logout=true">
+    <a class="text-decoration-none" href="/furreverfriends/authentication?logout=true">
       <button class="btn" id="logoutBtnNav">Logout</button>
     </a>
-    <a href="/petmarket/userprofile">
+    <a href="/furreverfriends/userprofile">
       <i class="fas fa-user header-icon"></i>
       <?php echo $_SESSION['user']['name'] ?>
     </a>
 
     <!-- Notification tab -->
 
-    <a href="/petmarket/requests">
+    <a href="/furreverfriends/requests">
   <div class="notification-tab">
         <!-- Use a built-in icon for the notification icon -->
         <i class="fas fa-envelope header-icon"></i> <!-- Change the icon class as needed -->
@@ -32,7 +32,7 @@
       </div>
     </a>
     <div class="wishlist-icon">
-      <a href="/petmarket/wishlist">
+      <a href="/furreverfriends/wishlist">
         <i class="fas fa-heart header-icon"></i>
       </a>
     </div>

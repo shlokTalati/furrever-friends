@@ -4,7 +4,7 @@
         /* Required for footer positioning */
         margin: 0;
         padding: 0;
-        background-image: url('/petmarket/app/resources/img/bg67.jpg');
+        background-image: url('/furreverfriends/app/resources/img/bg67.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -122,7 +122,7 @@
 </style>
 
 
-<form action="/petmarket/listpet" enctype="multipart/form-data" method="post">
+<form action="/furreverfriends/listpet" enctype="multipart/form-data" method="post">
     <h1 style="text-align:center;">Pet Listing Form</h1>
     <br><br>
 
