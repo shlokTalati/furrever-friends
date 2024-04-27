@@ -33,7 +33,7 @@ Follow these steps to install the project on your local machine:
    - Extract the contents of the zip file.
 
 2. **Rename the Folder:**
-   - Rename the extracted folder from `furrever_friends-main` to `furreverfriends`.
+   - Rename the extracted folder from `furrever-friends-main` to `furreverfriends`.
 
 3. **Copy to Server Directory:**
    - Copy the `furreverfriends` folder into your `htdocs` directory, commonly found in your local server environment (such as XAMPP, WAMP, or MAMP).
