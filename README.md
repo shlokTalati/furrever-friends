@@ -8,11 +8,11 @@ Welcome to our Pet Adoption Web Application! This project is developed purely fo
 
 ### User Authentication
 
-Users can Login, Signup and Logout of the application...
+Users can Login, Signup and Logout of the application with a Unique Email ID...
 
 ### Pet Listing and Adoption
 
-Users can easily list/delete pets for adoption or browse already listed pets....
+Users can easily list pets for adoption with all necessary details like Type, Breed, etc with Image or browse already listed pets....
 
 ### Wishlist Functionality
 
@@ -21,6 +21,7 @@ Users can add pets to a wishlist, making it easy to come back to that pet later 
 ### Automated Email Notifications
 
 The system is designed to enhance communication between users by sending automated emails for adoption requests, approvals, and rejections. This ensures that both the adopter and the adoptee are kept informed throughout the adoption process.
+
 
 ## 
 
