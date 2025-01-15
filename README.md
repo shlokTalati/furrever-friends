@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to our Pet Adoption Web Application! This project is developed purely...
+Welcome to our Pet Adoption Web Application! This project is developed purely for learning and practicing implementation of my knowledge
 
 ## Features
 
@@ -12,7 +12,7 @@ Users can Login, Signup and Logout of the application...
 
 ### Pet Listing and Adoption
 
-Users can easily list/delete pets for adoption or browse...
+Users can easily list/delete pets for adoption or browse already listed pets....
 
 ### Wishlist Functionality
 
